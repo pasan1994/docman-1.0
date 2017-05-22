@@ -48,3 +48,6 @@ E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.SearchDoc.resources
 E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.UpdateDocSecondary.resources
 E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.uploadDoc.resources
 E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.csproj.GenerateResource.Cache
+D:\MIT\Y2 Sem1\C#\github\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.exe.config
+D:\MIT\Y2 Sem1\C#\github\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.exe
+D:\MIT\Y2 Sem1\C#\github\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.pdb
