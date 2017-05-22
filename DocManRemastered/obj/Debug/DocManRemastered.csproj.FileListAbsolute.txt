@@ -1,0 +1,33 @@
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\bin\Debug\DocManRemastered.exe.config
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\bin\Debug\DocManRemastered.exe
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\bin\Debug\DocManRemastered.pdb
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.csprojResolveAssemblyReference.cache
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.Form1.resources
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.Properties.Resources.resources
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.csproj.GenerateResource.Cache
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.exe
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.pdb
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.main.resources
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.Buttons.resources
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.SearchDoc.resources
+c:\users\charley daniel\documents\visual studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.uploadDoc.resources
+C:\Users\Charley Daniel\Documents\Visual Studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.Categories.resources
+C:\Users\Charley Daniel\Documents\Visual Studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.CreateNewCategory.resources
+C:\Users\Charley Daniel\Documents\Visual Studio 2015\Projects\DocManRemastered\DocManRemastered\obj\Debug\DocManRemastered.UpdateDocSecondary.resources
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\bin\Debug\DocManRemastered.exe.config
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.exe
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.pdb
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\bin\Debug\DocManRemastered.exe
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\bin\Debug\DocManRemastered.pdb
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.csprojResolveAssemblyReference.cache
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.Buttons.resources
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.Categories.resources
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.CreateNewCategory.resources
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.Form1.resources
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.main.resources
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.Properties.Resources.resources
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.SearchDoc.resources
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.UpdateDocSecondary.resources
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.uploadDoc.resources
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.csproj.GenerateResource.Cache
+C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.NewsFeed.resources
