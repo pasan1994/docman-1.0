@@ -51,3 +51,6 @@ E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.csproj.GenerateResourc
 D:\MIT\Y2 Sem1\C#\github\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.exe.config
 D:\MIT\Y2 Sem1\C#\github\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.exe
 D:\MIT\Y2 Sem1\C#\github\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.pdb
+D:\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.exe.config
+D:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.exe
+D:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.pdb
