@@ -31,3 +31,20 @@ C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemaste
 C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.uploadDoc.resources
 C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.csproj.GenerateResource.Cache
 C:\Users\Pasan\Desktop\docman Interface\DocManRemastered\obj\Debug\DocManRemastered.NewsFeed.resources
+E:\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.exe.config
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.exe
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.pdb
+E:\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.exe
+E:\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.pdb
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.csprojResolveAssemblyReference.cache
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.Buttons.resources
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.Categories.resources
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.CreateNewCategory.resources
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.Form1.resources
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.main.resources
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.NewsFeed.resources
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.Properties.Resources.resources
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.SearchDoc.resources
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.UpdateDocSecondary.resources
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.uploadDoc.resources
+E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.csproj.GenerateResource.Cache
