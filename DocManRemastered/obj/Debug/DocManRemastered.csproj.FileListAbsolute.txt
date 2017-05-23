@@ -48,6 +48,7 @@ E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.SearchDoc.resources
 E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.UpdateDocSecondary.resources
 E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.uploadDoc.resources
 E:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 D:\MIT\C# Project\docman 1.0\DocManRemastered\bin\Debug\DocManRemastered.exe.config
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.exe
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.pdb
@@ -64,3 +65,28 @@ D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.SearchD
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.UpdateDocSecondary.resources
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.uploadDoc.resources
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.csproj.GenerateResource.Cache
+=======
+D:\MIT\Y2 Sem1\C#\github\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.exe.config
+D:\MIT\Y2 Sem1\C#\github\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.exe
+D:\MIT\Y2 Sem1\C#\github\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.pdb
+D:\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.exe.config
+D:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.exe
+D:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.pdb
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.exe.config
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.exe
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.pdb
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.exe
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.pdb
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.csprojResolveAssemblyReference.cache
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.Buttons.resources
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.Categories.resources
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.CreateNewCategory.resources
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.Form1.resources
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.main.resources
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.NewsFeed.resources
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.Properties.Resources.resources
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.SearchDoc.resources
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.UpdateDocSecondary.resources
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.uploadDoc.resources
+D:\Acadamic\GitHub\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.csproj.GenerateResource.Cache
+>>>>>>> origin/master
