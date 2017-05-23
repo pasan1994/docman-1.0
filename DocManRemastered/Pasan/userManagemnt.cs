@@ -39,7 +39,7 @@ namespace docman.Classes
 
         }
 
-        public String updateUserLoad(String username, Label designation, TextBox firstName, TextBox lastName, TextBox email, Label access, TextBox password)
+        public String updateUserLoad(String username, ComboBox designation, TextBox firstName, TextBox lastName, TextBox email, ComboBox access, TextBox password)
         {
             if (conn.connection().State == System.Data.ConnectionState.Closed)
                 conn.connection().Open();
