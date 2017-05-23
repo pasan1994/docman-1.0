@@ -40,7 +40,7 @@ namespace docman.Classes
 
         }
 
-        public String updateUserLoad(String username, ComboBox designation, TextBox firstName, TextBox lastName, TextBox email, ComboBox access, TextBox password)
+        public String updateUserLoad(String username, ComboBox title,TextBox email, ComboBox access, TextBox password,TextBox confirmPass)
         {
             if (conn.connection().State == System.Data.ConnectionState.Closed)
                 conn.connection().Open();
@@ -50,13 +50,12 @@ namespace docman.Classes
             SqlDataReader reader = readcommand.ExecuteReader();
             while (reader.Read())
             {
-                staffID = reader[1].ToString();
-                designation.Text = reader[2].ToString();
-                firstName.Text = reader[3].ToString();
-                lastName.Text = reader[4].ToString();
-                email.Text = reader[7].ToString();
-                password.Text = reader[6].ToString();
-                access.Text = reader[8].ToString();
+                staffID = reader[0].ToString();
+                title.Text = reader[1].ToString();
+                email.Text = reader[6].ToString();
+                password.Text = reader[5].ToString();
+                confirmPass.Text= reader[5].ToString();
+                access.Text = reader[7].ToString();
 
 
             }
@@ -67,21 +66,21 @@ namespace docman.Classes
             return staffID;
         }
 
-        public void updateUser(String firstName, String lastName, String email, String access, String password, String designation)
+        public void updateUser(String email, String access, String password, String designation)
         {
             if (conn.connection().State == System.Data.ConnectionState.Closed)
                 conn.connection().Open();
             try
             {
-                SqlCommand updateCommand = new SqlCommand("update Users set designation=@designation ,password=@password,firstName=@firstName,lastName=@lastName,email=@email,accesslevel=@accesslevel  where staffID=@staffID", conn.connection());
+                SqlCommand updateCommand = new SqlCommand("update Users set designation=@designation ,password=@password,email=@email,accesslevel=@accesslevel  where staffID=@staffID", conn.connection());
 
                 updateCommand.Parameters.Add(new SqlParameter("@designation", designation));
                 updateCommand.Parameters.Add(new SqlParameter("@password", password));
-                updateCommand.Parameters.Add(new SqlParameter("@firstName", firstName));
-                updateCommand.Parameters.Add(new SqlParameter("@lastName", lastName));
                 updateCommand.Parameters.Add(new SqlParameter("@email", email));
-                updateCommand.Parameters.Add(new SqlParameter("@accesslevel", access));
                 updateCommand.Parameters.Add(new SqlParameter("@staffID", staffID));
+                updateCommand.Parameters.Add(new SqlParameter("@accesslevel", access));
+
+               
                 updateCommand.ExecuteNonQuery();
                 updateCommand.Dispose();
                 conn.closeConnection();
@@ -108,6 +107,8 @@ namespace docman.Classes
                 ad.Fill(ds, "Users");
                 users.DisplayMember = "username";
                 users.ValueMember = "username";
+                users.DataSource = ds.Tables["Users"];
+                Console.WriteLine("Done");
                 ds.Dispose();
                 combo.Dispose();
                 conn.closeConnection();
