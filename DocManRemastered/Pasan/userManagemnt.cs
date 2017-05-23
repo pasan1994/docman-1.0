@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace docman.Classes
 {
@@ -83,6 +84,7 @@ namespace docman.Classes
                 updateCommand.Parameters.Add(new SqlParameter("@staffID", staffID));
                 updateCommand.ExecuteNonQuery();
                 updateCommand.Dispose();
+                conn.closeConnection();
             }
             catch (Exception f)
             {
@@ -90,6 +92,34 @@ namespace docman.Classes
 
             }
         }
+
+
+        public void toCombo(ComboBox users)
+        {
+            if (conn.connection().State == System.Data.ConnectionState.Closed)
+                conn.connection().Open();
+            try
+            {
+                SqlCommand combo = new SqlCommand("select username from Users", conn.connection());
+
+                SqlDataAdapter ad = new SqlDataAdapter(combo);
+               
+                DataSet ds = new DataSet();
+                ad.Fill(ds, "Users");
+                users.DisplayMember = "username";
+                users.ValueMember = "username";
+                ds.Dispose();
+                combo.Dispose();
+                conn.closeConnection();
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+
+            }
+
+        }
+
     }
 }
     
