@@ -68,3 +68,20 @@ D:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.SearchDoc.resources
 D:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.UpdateDocSecondary.resources
 D:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.uploadDoc.resources
 D:\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.csproj.GenerateResource.Cache
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.exe.config
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.exe
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\bin\Debug\DocManRemastered.pdb
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.csprojResolveAssemblyReference.cache
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.Buttons.resources
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.Categories.resources
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.CreateNewCategory.resources
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.Form1.resources
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.main.resources
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.NewsFeed.resources
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.Properties.Resources.resources
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.SearchDoc.resources
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.UpdateDocSecondary.resources
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.uploadDoc.resources
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.csproj.GenerateResource.Cache
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.exe
+H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug\DocManRemastered.pdb
