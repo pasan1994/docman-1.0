@@ -32,82 +32,91 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.levelcombo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.emailtxt1 = new System.Windows.Forms.TextBox();
+            this.lNametxt = new System.Windows.Forms.TextBox();
+            this.fnametxt = new System.Windows.Forms.TextBox();
+            this.usName = new System.Windows.Forms.TextBox();
+            this.passwordtxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.update = new System.Windows.Forms.TabPage();
+            this.titleCombo = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.username = new System.Windows.Forms.ComboBox();
+            this.accesscombo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.confirmpass = new System.Windows.Forms.TextBox();
+            this.emailtxt = new System.Windows.Forms.TextBox();
+            this.pass = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.lbltitle = new System.Windows.Forms.Label();
+            this.titlecomboadd = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.update.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.update);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(9, 32);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(850, 330);
             this.tabControl1.TabIndex = 9;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.titlecomboadd);
+            this.tabPage1.Controls.Add(this.lbltitle);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.comboBox2);
+            this.tabPage1.Controls.Add(this.levelcombo);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.textBox5);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox6);
-            this.tabPage1.Controls.Add(this.textBox7);
-            this.tabPage1.Controls.Add(this.textBox8);
+            this.tabPage1.Controls.Add(this.emailtxt1);
+            this.tabPage1.Controls.Add(this.lNametxt);
+            this.tabPage1.Controls.Add(this.fnametxt);
+            this.tabPage1.Controls.Add(this.usName);
+            this.tabPage1.Controls.Add(this.passwordtxt);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(842, 297);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add New User";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(404, 228);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 30);
             this.button1.TabIndex = 32;
@@ -118,22 +127,28 @@
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(330, 228);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(70, 30);
             this.button2.TabIndex = 33;
             this.button2.Text = "Enter";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox2
+            // levelcombo
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(141, 118);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(190, 28);
-            this.comboBox2.TabIndex = 31;
+            this.levelcombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.levelcombo.FormattingEnabled = true;
+            this.levelcombo.Items.AddRange(new object[] {
+            "Senior Lecturer",
+            "Junior Lecturer",
+            "Demonstrator",
+            "Non Academic Staff"});
+            this.levelcombo.Location = new System.Drawing.Point(145, 118);
+            this.levelcombo.Margin = new System.Windows.Forms.Padding(2);
+            this.levelcombo.Name = "levelcombo";
+            this.levelcombo.Size = new System.Drawing.Size(190, 28);
+            this.levelcombo.TabIndex = 31;
             // 
             // label2
             // 
@@ -182,11 +197,12 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(141, 224);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(145, 224);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(166, 26);
             this.textBox1.TabIndex = 25;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label9
             // 
@@ -199,50 +215,53 @@
             this.label9.TabIndex = 24;
             this.label9.Text = "Username";
             // 
-            // textBox5
+            // emailtxt1
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(141, 82);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(395, 26);
-            this.textBox5.TabIndex = 20;
+            this.emailtxt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailtxt1.Location = new System.Drawing.Point(145, 82);
+            this.emailtxt1.Margin = new System.Windows.Forms.Padding(2);
+            this.emailtxt1.Name = "emailtxt1";
+            this.emailtxt1.Size = new System.Drawing.Size(395, 26);
+            this.emailtxt1.TabIndex = 20;
+            this.emailtxt1.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // textBox2
+            // lNametxt
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(141, 54);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 26);
-            this.textBox2.TabIndex = 21;
+            this.lNametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNametxt.Location = new System.Drawing.Point(145, 54);
+            this.lNametxt.Margin = new System.Windows.Forms.Padding(2);
+            this.lNametxt.Name = "lNametxt";
+            this.lNametxt.Size = new System.Drawing.Size(144, 26);
+            this.lNametxt.TabIndex = 21;
             // 
-            // textBox6
+            // fnametxt
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(141, 24);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(144, 26);
-            this.textBox6.TabIndex = 21;
+            this.fnametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fnametxt.Location = new System.Drawing.Point(145, 24);
+            this.fnametxt.Margin = new System.Windows.Forms.Padding(2);
+            this.fnametxt.Name = "fnametxt";
+            this.fnametxt.Size = new System.Drawing.Size(144, 26);
+            this.fnametxt.TabIndex = 21;
+            this.fnametxt.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // textBox7
+            // usName
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(141, 160);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(166, 26);
-            this.textBox7.TabIndex = 22;
+            this.usName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usName.Location = new System.Drawing.Point(145, 160);
+            this.usName.Margin = new System.Windows.Forms.Padding(2);
+            this.usName.Name = "usName";
+            this.usName.Size = new System.Drawing.Size(166, 26);
+            this.usName.TabIndex = 22;
+            this.usName.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
-            // textBox8
+            // passwordtxt
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(141, 190);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(166, 26);
-            this.textBox8.TabIndex = 23;
+            this.passwordtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordtxt.Location = new System.Drawing.Point(145, 190);
+            this.passwordtxt.Margin = new System.Windows.Forms.Padding(2);
+            this.passwordtxt.Name = "passwordtxt";
+            this.passwordtxt.Size = new System.Drawing.Size(166, 26);
+            this.passwordtxt.TabIndex = 23;
             // 
             // label1
             // 
@@ -266,35 +285,62 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "First Name";
             // 
-            // tabPage2
+            // update
             // 
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.comboBox3);
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox9);
-            this.tabPage2.Controls.Add(this.textBox12);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(842, 297);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Update User";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.update.Controls.Add(this.titleCombo);
+            this.update.Controls.Add(this.label13);
+            this.update.Controls.Add(this.button4);
+            this.update.Controls.Add(this.button3);
+            this.update.Controls.Add(this.username);
+            this.update.Controls.Add(this.accesscombo);
+            this.update.Controls.Add(this.label4);
+            this.update.Controls.Add(this.label5);
+            this.update.Controls.Add(this.label11);
+            this.update.Controls.Add(this.label12);
+            this.update.Controls.Add(this.confirmpass);
+            this.update.Controls.Add(this.emailtxt);
+            this.update.Controls.Add(this.pass);
+            this.update.Controls.Add(this.label14);
+            this.update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update.Location = new System.Drawing.Point(4, 29);
+            this.update.Margin = new System.Windows.Forms.Padding(2);
+            this.update.Name = "update";
+            this.update.Padding = new System.Windows.Forms.Padding(2);
+            this.update.Size = new System.Drawing.Size(842, 297);
+            this.update.TabIndex = 1;
+            this.update.Text = "Update User";
+            this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
+            // 
+            // titleCombo
+            // 
+            this.titleCombo.FormattingEnabled = true;
+            this.titleCombo.Items.AddRange(new object[] {
+            "Dr.",
+            "Mr.",
+            "Mrs.",
+            "Ms.",
+            "Professor"});
+            this.titleCombo.Location = new System.Drawing.Point(675, 77);
+            this.titleCombo.Name = "titleCombo";
+            this.titleCombo.Size = new System.Drawing.Size(145, 28);
+            this.titleCombo.TabIndex = 51;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(619, 82);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 20);
+            this.label13.TabIndex = 50;
+            this.label13.Text = "Title";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(544, 243);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(80, 28);
             this.button4.TabIndex = 48;
@@ -305,30 +351,42 @@
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(459, 243);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(81, 28);
             this.button3.TabIndex = 47;
             this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // comboBox3
+            // username
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(199, 41);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(370, 28);
-            this.comboBox3.TabIndex = 46;
+            this.username.FormattingEnabled = true;
+            this.username.Location = new System.Drawing.Point(199, 41);
+            this.username.Margin = new System.Windows.Forms.Padding(2);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(370, 28);
+            this.username.TabIndex = 46;
+            this.username.SelectedIndexChanged += new System.EventHandler(this.username_SelectedIndexChanged);
             // 
-            // comboBox1
+            // accesscombo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(199, 121);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 28);
-            this.comboBox1.TabIndex = 45;
+            this.accesscombo.AutoCompleteCustomSource.AddRange(new string[] {
+            "Senior Lecturer",
+            "Junior Lecturer",
+            "Demonstrator",
+            "Non Academic Staff"});
+            this.accesscombo.FormattingEnabled = true;
+            this.accesscombo.Items.AddRange(new object[] {
+            "Senior Lecturer",
+            "Junior Lecturer",
+            "Demonstrator",
+            "Non Academic Staff"});
+            this.accesscombo.Location = new System.Drawing.Point(199, 121);
+            this.accesscombo.Margin = new System.Windows.Forms.Padding(2);
+            this.accesscombo.Name = "accesscombo";
+            this.accesscombo.Size = new System.Drawing.Size(190, 28);
+            this.accesscombo.TabIndex = 45;
             // 
             // label4
             // 
@@ -374,29 +432,29 @@
             this.label12.TabIndex = 41;
             this.label12.Text = "Password";
             // 
-            // textBox3
+            // confirmpass
             // 
-            this.textBox3.Location = new System.Drawing.Point(199, 222);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(166, 26);
-            this.textBox3.TabIndex = 39;
+            this.confirmpass.Location = new System.Drawing.Point(199, 222);
+            this.confirmpass.Margin = new System.Windows.Forms.Padding(2);
+            this.confirmpass.Name = "confirmpass";
+            this.confirmpass.Size = new System.Drawing.Size(166, 26);
+            this.confirmpass.TabIndex = 39;
             // 
-            // textBox9
+            // emailtxt
             // 
-            this.textBox9.Location = new System.Drawing.Point(199, 79);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(370, 26);
-            this.textBox9.TabIndex = 34;
+            this.emailtxt.Location = new System.Drawing.Point(199, 79);
+            this.emailtxt.Margin = new System.Windows.Forms.Padding(2);
+            this.emailtxt.Name = "emailtxt";
+            this.emailtxt.Size = new System.Drawing.Size(370, 26);
+            this.emailtxt.TabIndex = 34;
             // 
-            // textBox12
+            // pass
             // 
-            this.textBox12.Location = new System.Drawing.Point(199, 179);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(166, 26);
-            this.textBox12.TabIndex = 37;
+            this.pass.Location = new System.Drawing.Point(199, 179);
+            this.pass.Margin = new System.Windows.Forms.Padding(2);
+            this.pass.Name = "pass";
+            this.pass.Size = new System.Drawing.Size(166, 26);
+            this.pass.TabIndex = 37;
             // 
             // label14
             // 
@@ -409,6 +467,33 @@
             this.label14.TabIndex = 32;
             this.label14.Text = "Select User";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // lbltitle
+            // 
+            this.lbltitle.AutoSize = true;
+            this.lbltitle.Location = new System.Drawing.Point(348, 25);
+            this.lbltitle.Name = "lbltitle";
+            this.lbltitle.Size = new System.Drawing.Size(38, 20);
+            this.lbltitle.TabIndex = 34;
+            this.lbltitle.Text = "Title";
+            // 
+            // titlecomboadd
+            // 
+            this.titlecomboadd.FormattingEnabled = true;
+            this.titlecomboadd.Items.AddRange(new object[] {
+            "Dr.",
+            "Mr.",
+            "Ms.",
+            "Mrs.",
+            "Professor"});
+            this.titlecomboadd.Location = new System.Drawing.Point(415, 24);
+            this.titlecomboadd.Name = "titlecomboadd";
+            this.titlecomboadd.Size = new System.Drawing.Size(121, 28);
+            this.titlecomboadd.TabIndex = 35;
+            // 
             // Buttons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,14 +502,14 @@
             this.ClientSize = new System.Drawing.Size(860, 365);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Buttons";
             this.Text = "Manage Users";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.update.ResumeLayout(false);
+            this.update.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -435,32 +520,37 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox levelcombo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox emailtxt1;
+        private System.Windows.Forms.TextBox fnametxt;
+        private System.Windows.Forms.TextBox usName;
+        private System.Windows.Forms.TextBox passwordtxt;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage update;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox username;
+        private System.Windows.Forms.ComboBox accesscombo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox confirmpass;
+        private System.Windows.Forms.TextBox emailtxt;
+        private System.Windows.Forms.TextBox pass;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox lNametxt;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox titleCombo;
+        private System.Windows.Forms.Label lbltitle;
+        private System.Windows.Forms.ComboBox titlecomboadd;
     }
 }
