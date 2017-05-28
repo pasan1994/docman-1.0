@@ -58,7 +58,6 @@
             this.Update = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.senderdoc = new System.Windows.Forms.TextBox();
-            this.keywords = new System.Windows.Forms.TextBox();
             this.RecievedDatePicker = new System.Windows.Forms.DateTimePicker();
             this.LblDateRecieved = new System.Windows.Forms.Label();
             this.LblFrom = new System.Windows.Forms.Label();
@@ -85,6 +84,7 @@
             this.lecs = new System.Windows.Forms.CheckedListBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.keywords = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchresults)).BeginInit();
@@ -433,8 +433,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.senderdoc);
             this.panel3.Controls.Add(this.keywords);
+            this.panel3.Controls.Add(this.senderdoc);
             this.panel3.Controls.Add(this.RecievedDatePicker);
             this.panel3.Controls.Add(this.LblDateRecieved);
             this.panel3.Controls.Add(this.LblFrom);
@@ -460,16 +460,6 @@
             this.senderdoc.Name = "senderdoc";
             this.senderdoc.Size = new System.Drawing.Size(214, 26);
             this.senderdoc.TabIndex = 106;
-            // 
-            // keywords
-            // 
-            this.keywords.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.keywords.Location = new System.Drawing.Point(20, 283);
-            this.keywords.Margin = new System.Windows.Forms.Padding(2);
-            this.keywords.Multiline = true;
-            this.keywords.Name = "keywords";
-            this.keywords.Size = new System.Drawing.Size(318, 136);
-            this.keywords.TabIndex = 103;
             // 
             // RecievedDatePicker
             // 
@@ -608,8 +598,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(73, 30);
             this.button3.TabIndex = 122;
-            this.button3.Text = "Upload";
+            this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel2
             // 
@@ -766,6 +757,14 @@
             this.label16.TabIndex = 110;
             this.label16.Text = "Custom Notification";
             // 
+            // keywords
+            // 
+            this.keywords.Location = new System.Drawing.Point(14, 285);
+            this.keywords.Name = "keywords";
+            this.keywords.Size = new System.Drawing.Size(324, 155);
+            this.keywords.TabIndex = 107;
+            this.keywords.Text = "";
+            // 
             // SearchDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -818,7 +817,6 @@
         private System.Windows.Forms.Label lbltopic;
         private System.Windows.Forms.Label lbldate;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox keywords;
         private System.Windows.Forms.DateTimePicker RecievedDatePicker;
         private System.Windows.Forms.Label LblDateRecieved;
         private System.Windows.Forms.Label LblFrom;
@@ -853,5 +851,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox notificationstxt;
         private System.Windows.Forms.TextBox senderdoc;
+        private System.Windows.Forms.RichTextBox keywords;
     }
 }

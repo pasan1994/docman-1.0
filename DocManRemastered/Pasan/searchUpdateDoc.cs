@@ -109,7 +109,7 @@ namespace docman.Classes
         }
        
 
-        public void toUpdate(ref DataGridView dv, DateTimePicker date, TextBox sender, TextBox topic, ComboBox status, DateTimePicker deadline, CheckedListBox notify, CheckedListBox custom, TextBox keywords)
+        public void toUpdate(ref DataGridView dv, DateTimePicker date, TextBox sender, TextBox topic, ComboBox status, DateTimePicker deadline, CheckedListBox notify, CheckedListBox custom, RichTextBox keywords)
         {
            
             bool customNoty = false;
@@ -219,24 +219,65 @@ namespace docman.Classes
             ch.SetItemChecked(index, true);
         }
 
-        public void updateDetails(ref DataGridView dv, DateTimePicker date, TextBox sender, TextBox topic, ComboBox status, DateTimePicker deadline, CheckedListBox notifications, CheckedListBox custom, RichTextBox keywords, RichTextBox progress)
+        public void updateDetails(ref DataGridView dv, DateTimePicker date, TextBox sender, TextBox topic, ComboBox status, DateTimePicker deadline, CheckedListBox notifications, CheckedListBox custom, RichTextBox keywords)
         {
             if (conn.connection().State == System.Data.ConnectionState.Closed)
                 conn.connection().Open();
 
             
-            String ID = dv.SelectedRows[0].Cells[1].Value.ToString();
+            String ID = dv.SelectedRows[0].Cells[2].Value.ToString();
           
-            SqlCommand readcommand3;
+         /*   SqlCommand readcommand3;
             readcommand3 = new SqlCommand("Update files SET date_Recieved=@date where doc_ID=" + ID + " ", conn.connection());
-            readcommand3.Parameters.AddWithValue("@date", date);
+            readcommand3.Parameters.AddWithValue("@date", date.Value);
             readcommand3.ExecuteNonQuery();
             readcommand3 = new SqlCommand("Update files SET  sender=@sender where doc_ID=" + ID + " ", conn.connection());
-            readcommand3.Parameters.AddWithValue("@sender", sender);
+            readcommand3.Parameters.AddWithValue("@sender", sender.Text);
             readcommand3.ExecuteNonQuery();
             readcommand3 = new SqlCommand("Update files SET  topic=@topic where doc_ID=" + ID + " ", conn.connection());
-            readcommand3.Parameters.AddWithValue("@topic", topic);
+            readcommand3.Parameters.AddWithValue("@topic", topic.Text);
             readcommand3.ExecuteNonQuery();
+            readcommand3 = new SqlCommand("Update files SET  status=@status where doc_ID=" + ID + " ", conn.connection());
+            readcommand3.Parameters.AddWithValue("@status",status.SelectedItem.ToString());
+            readcommand3.ExecuteNonQuery();
+            readcommand3 = new SqlCommand("Update files SET  deadline=@deadline where doc_ID=" + ID + " ", conn.connection());
+            readcommand3.Parameters.AddWithValue("@deadline", deadline.Value);
+            readcommand3.ExecuteNonQuery();
+            readcommand3 = new SqlCommand("Update files SET  keywords=@keywords where doc_ID=" + ID + " ", conn.connection());
+            readcommand3.Parameters.AddWithValue("@keywords", keywords.Text);
+            readcommand3.ExecuteNonQuery();*/
+            getItems(notifications,false);
+            getItems(custom,true);
+
+        }
+
+        private void getItems(CheckedListBox ch2,bool value)
+        {
+           
+            if(value==true)
+            for (int x = 0; x < ch2.Items.Count; x++)
+            {
+                if (ch2.GetItemChecked(x))
+                {
+                    Console.WriteLine(ch2.SelectedValue);
+
+                }
+
+
+            }
+
+            if(value==false)
+            for (int x = 0; x < ch2.Items.Count; x++)
+            {
+                if (ch2.GetItemChecked(x))
+                {
+                    //Console.WriteLine(ch2.GetItemText());
+
+                }
+
+
+            }
+
         }
 
         public void loadCategories(ComboBox cat)
