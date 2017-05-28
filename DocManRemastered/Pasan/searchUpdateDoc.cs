@@ -13,26 +13,20 @@ namespace docman.Classes
     class searchUpdateDoc
     {
         makeConnection conn = new makeConnection();
+        ArrayList notifications = new ArrayList();
+        ArrayList customNotifications = new ArrayList();
 
-        public void searchDocument(String name, ref DataGridView dv)
+        public void searchDocument(String keyword, ref DataGridView dv)
         {
 
             if (conn.connection().State == System.Data.ConnectionState.Closed)
                 conn.connection().Open();
 
-            ArrayList table = new ArrayList();
+           
             DataTable dtRecord = new DataTable();
-            SqlCommand readcommand = new SqlCommand("SELECT category_name FROM categories", conn.connection());
-            SqlDataReader reader = readcommand.ExecuteReader();
-            while (reader.Read())
-
-                table.Add(reader[0].ToString());
-            reader.Close();
-            readcommand.Dispose();
-            String keyword = string.Format("%{0}%", name);
-            foreach (String tbname in table)
-            {
-                SqlCommand readcommand2 = new SqlCommand("SELECT * FROM " + tbname + " where keywords LIKE @key ", conn.connection());
+          
+          
+          SqlCommand readcommand2 = new SqlCommand("SELECT c.category_name ,f.* FROM files f,categories c where keywords LIKE '%'+@key+'%' and f.catID=category_ID", conn.connection());
 
                 readcommand2.Parameters.AddWithValue("@key", keyword);
                 SqlDataAdapter adapter = new SqlDataAdapter(readcommand2);
@@ -48,107 +42,234 @@ namespace docman.Classes
                 }
                 readcommand2.Dispose();
                 adapter.Dispose();
-            }
-            dv.DataSource = dtRecord;
             
+            dv.DataSource = dtRecord;
+            dv.Columns[1].Visible = false;
+            dv.Columns[2].Visible = false;
+            dv.Columns[3].Visible = false;
+            dv.Columns[4].Visible = false;
+            dv.Columns[5].Visible = false;
+            dv.Columns[7].Visible = false;
+            dv.Columns[8].Visible = false;
+            dv.Columns[9].Visible = false;
+            dv.Columns[10].Visible = false;
+
+
             dtRecord.Dispose();
 
+            
 
 
-
-            //conn.closeConnection();
+            conn.closeConnection();
 
         }
 
-        public void docINFO(ref DataGridView dv, ref Label lbldate, ref Label lblsender, ref Label lbltopic, ref Label lblstatus, ref Label lbldeadline, ref Label lblnotifications, ref Label lblprogress, ref RichTextBox txtkeywords)
+        public void docINFO(ref DataGridView dv, ref Label lbldate, ref Label lblsender, ref Label lbltopic, ref Label lblstatus, ref Label lbldeadline, ref RichTextBox lblnotifications, ref RichTextBox lblprogress)
         {
+            if (conn.connection().State == System.Data.ConnectionState.Closed)
+                conn.connection().Open();
             bool custom = false;
 
-            lbldate.Text = dv.SelectedRows[0].Cells[2].Value.ToString();
-            lblsender.Text = dv.SelectedRows[0].Cells[3].Value.ToString();
-            lbltopic.Text = dv.SelectedRows[0].Cells[4].Value.ToString();
-            lblstatus.Text = dv.SelectedRows[0].Cells[6].Value.ToString();
-            lbldeadline.Text = dv.SelectedRows[0].Cells[7].Value.ToString();
-            
-            txtkeywords.Text = dv.SelectedRows[0].Cells[9].Value.ToString();
-            lblprogress.Text = dv.SelectedRows[0].Cells[10].Value.ToString();
+            if (conn.connection().State == System.Data.ConnectionState.Closed)
+                conn.connection().Open();
 
-            SqlCommand readcommand = new SqlCommand("SELECT notified from notifications where doc=" + dv.SelectedRows[0].Cells[0].Value.ToString() + " and docID=" + dv.SelectedRows[0].Cells[1].Value.ToString() +" ", conn.connection());
+              lbldate.Text = dv.SelectedRows[0].Cells[3].Value.ToString();
+              lblsender.Text = dv.SelectedRows[0].Cells[4].Value.ToString();
+              lbltopic.Text = dv.SelectedRows[0].Cells[5].Value.ToString();
+             lblstatus.Text = dv.SelectedRows[0].Cells[7].Value.ToString();
+              lbldeadline.Text = dv.SelectedRows[0].Cells[8].Value.ToString();
+                lblprogress.Text = dv.SelectedRows[0].Cells[10].Value.ToString();
+
+            SqlCommand readcommand = new SqlCommand("SELECT notified from notifications where docID=" + dv.SelectedRows[0].Cells[2].Value.ToString()+ " ", conn.connection());
             SqlDataReader reader = readcommand.ExecuteReader();
             while (reader.Read())
             {
                 lblnotifications.Text += reader[0].ToString()+"\n";
-                if (reader[0].ToString() == "custom")
+                
+                if (reader[0].ToString() == "Custom")
                     custom = true;
 
             }
 
+            reader.Close();
             if (custom == true)
             {
-                readcommand = new SqlCommand("SELECT u.designation,u.firstName,u.lastName as Lec from customNotifications c,Users u where c.doc=" + dv.SelectedRows[0].Cells[0].Value.ToString() + " and  c.docID=" + dv.SelectedRows[0].Cells[1].Value.ToString() + " and c.staffID=u.staffID ", conn.connection());
+                readcommand = new SqlCommand("SELECT u.designation+''+u.firstName+''+u.lastName as Lec from customNotifications c,Users u where c.docID=" + dv.SelectedRows[0].Cells[2].Value.ToString() +" and c.staffID=u.staffID ", conn.connection());
                 reader = readcommand.ExecuteReader();
                 while (reader.Read())
                 {
                     lblnotifications.Text += reader[0].ToString() + "\n";
+                   
                 }
-            }
-
-        }
-        public void test(ref DataGridView dv,Label lblnotifications)
-        {
-            
-            bool custom = false;
-            SqlCommand readcommand = new SqlCommand("SELECT notified from notifications where doc='" + dv.SelectedRows[0].Cells[0].Value.ToString() + "' and docID=" + dv.SelectedRows[0].Cells[1].Value.ToString() + " ", conn.connection());
-            SqlDataReader reader = readcommand.ExecuteReader();
-
-
-            while (reader.Read())
-            {
-                lblnotifications.Text += reader[0].ToString() + "\n";
-                if (reader[0].ToString() == "custom")
-                    custom = true;
-
             }
             reader.Close();
+            readcommand.Dispose();
+            conn.closeConnection();
 
-            if (custom == true)
+        }
+       
+
+        public void toUpdate(ref DataGridView dv, DateTimePicker date, TextBox sender, TextBox topic, ComboBox status, DateTimePicker deadline, CheckedListBox notify, CheckedListBox custom, TextBox keywords)
+        {
+           
+            bool customNoty = false;
+
+            if (conn.connection().State == System.Data.ConnectionState.Closed)
+                conn.connection().Open();
+            try
             {
-                SqlCommand readcommand2 = new SqlCommand("SELECT u.designation,u.firstName,u.lastName as Lec from customNotifications c,Users u where c.doc='" + dv.SelectedRows[0].Cells[0].Value.ToString() + "' and  c.docID=" + dv.SelectedRows[0].Cells[1].Value.ToString() + " and c.staffID=u.staffID ", conn.connection());
-                SqlDataReader reader2 = readcommand2.ExecuteReader();
-                while (reader2.Read())
+
+                date.Value = (DateTime)(dv.SelectedRows[0].Cells[3].Value);
+                sender.Text = dv.SelectedRows[0].Cells[4].Value.ToString();
+                topic.Text = dv.SelectedRows[0].Cells[5].Value.ToString();
+                status.Text = dv.SelectedRows[0].Cells[7].Value.ToString();
+                if (dv.SelectedRows[0].Cells[8].Value != DBNull.Value)
                 {
-                    lblnotifications.Text += reader[0].ToString();
+                    deadline.Value = (DateTime)dv.SelectedRows[0].Cells[8].Value;
                 }
+                
+                keywords.Text = dv.SelectedRows[0].Cells[9].Value.ToString();
+
+                   
+
+                SqlCommand readcommand = new SqlCommand("SELECT notified from notifications where docID=" + dv.SelectedRows[0].Cells[2].Value.ToString() + " ", conn.connection());
+                SqlDataReader reader = readcommand.ExecuteReader();
+               
+                while (reader.Read())
+                {
+                    if (reader[0].ToString() == "Custom")
+                        customNoty = true;
+                    SetItemChecked(reader[0].ToString(),notify);
+                    notifications.Add(reader[0].ToString());
+                }
+                reader.Close();
+
+                readcommand=new SqlCommand("SELECT staffID from customNotifications  where docID=" + dv.SelectedRows[0].Cells[2].Value.ToString() + " ", conn.connection());
+               reader = readcommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    customNotifications.Add(reader[0].ToString());
+                    setItem(reader[0].ToString(), custom);
+                }
+                reader.Close();
+                conn.closeConnection();
+
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
             }
         }
 
-        public void toUpdate(ref DataGridView dv, DateTimePicker date, TextBox sender, TextBox topic, ComboBox status, DateTimePicker deadline, CheckedListBox notifications, CheckedListBox custom, RichTextBox keywords, RichTextBox progress)
+        private void SetItemChecked(string item,CheckedListBox ch)
         {
-            date.Value = (DateTime)dv.SelectedRows[0].Cells[2].Value;
-            sender.Text = dv.SelectedRows[0].Cells[3].Value.ToString();
-            topic.Text = dv.SelectedRows[0].Cells[4].Value.ToString();
-            status.Text = dv.SelectedRows[0].Cells[6].Value.ToString();
-            deadline.Value = (DateTime)dv.SelectedRows[0].Cells[7].Value;
-        
-            keywords.Text = dv.SelectedRows[0].Cells[9].Value.ToString();
-            progress.Text = dv.SelectedRows[0].Cells[10].Value.ToString();
+            int index = GetItemIndex(item,ch);
+
+            if (index < 0) return;
+
+            ch.SetItemChecked(index, true);
+           
+        }
+
+        private int GetItemIndex(string item,CheckedListBox ch)
+        {
+            int index = 0;
+
+            foreach (object o in ch.Items)
+            {
+                if (item == o.ToString())
+                {
+                    
+                    return index;
+                }
+
+                index++;
+            }
+
+            return -1;
+        }
+
+
+        private int getIndex(String id,CheckedListBox ch)
+        {
+            int index = 0;
+           
+            foreach (object o in ch.Items)
+            {
+                DataRowView castedItem = o as DataRowView;
+                string id1 = castedItem["staffID"].ToString();
+                if (id == id1)
+                {
+
+                    return index;
+                }
+
+                index++;
+            }
+
+            return -1;
+        }
+
+        private void setItem(String id,CheckedListBox ch)
+        {
+            int index = getIndex(id, ch);
+
+            if (index < 0) return;
+
+            ch.SetItemChecked(index, true);
         }
 
         public void updateDetails(ref DataGridView dv, DateTimePicker date, TextBox sender, TextBox topic, ComboBox status, DateTimePicker deadline, CheckedListBox notifications, CheckedListBox custom, RichTextBox keywords, RichTextBox progress)
         {
-            String table = dv.SelectedRows[0].Cells[0].Value.ToString();
+            if (conn.connection().State == System.Data.ConnectionState.Closed)
+                conn.connection().Open();
+
+            
             String ID = dv.SelectedRows[0].Cells[1].Value.ToString();
           
             SqlCommand readcommand3;
-            readcommand3 = new SqlCommand("Update" + table + " SET date_Recieved=@date where doc_ID=" + ID + " ", conn.connection());
+            readcommand3 = new SqlCommand("Update files SET date_Recieved=@date where doc_ID=" + ID + " ", conn.connection());
             readcommand3.Parameters.AddWithValue("@date", date);
             readcommand3.ExecuteNonQuery();
-            readcommand3 = new SqlCommand("Update" + table + " SET sender=@sender where doc_ID=" + ID + " ", conn.connection());
+            readcommand3 = new SqlCommand("Update files SET  sender=@sender where doc_ID=" + ID + " ", conn.connection());
             readcommand3.Parameters.AddWithValue("@sender", sender);
             readcommand3.ExecuteNonQuery();
-            readcommand3 = new SqlCommand("Update" + table + " SET topic=@topic where doc_ID=" + ID + " ", conn.connection());
+            readcommand3 = new SqlCommand("Update files SET  topic=@topic where doc_ID=" + ID + " ", conn.connection());
             readcommand3.Parameters.AddWithValue("@topic", topic);
             readcommand3.ExecuteNonQuery();
         }
+
+        public void loadCategories(ComboBox cat)
+        {
+            if (conn.connection().State == System.Data.ConnectionState.Closed)
+                conn.connection().Open();
+            try
+            {
+                SqlCommand combo = new SqlCommand("select category_ID,category_name from categories", conn.connection());
+
+                SqlDataAdapter ad = new SqlDataAdapter(combo);
+
+                DataSet ds = new DataSet();
+                ad.Fill(ds, "categories");
+                cat.DisplayMember = "category_name";
+                cat.ValueMember = "category_ID";
+                cat.DataSource = ds.Tables["categories"];
+               
+                ds.Dispose();
+                combo.Dispose();
+                ad.Dispose();
+                conn.closeConnection();
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+
+            }
+
+        }
+
     }
+        
+    
 }
+

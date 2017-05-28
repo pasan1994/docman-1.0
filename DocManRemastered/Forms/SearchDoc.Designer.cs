@@ -34,40 +34,42 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.keywordtxt = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.searchresults = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.notificationstxt = new System.Windows.Forms.RichTextBox();
+            this.lblsender = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.progresstxt = new System.Windows.Forms.RichTextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblstatusdoc = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lbldead = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lbltopic = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lbldate = new System.Windows.Forms.Label();
             this.Update = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.senderdoc = new System.Windows.Forms.TextBox();
+            this.keywords = new System.Windows.Forms.TextBox();
             this.RecievedDatePicker = new System.Windows.Forms.DateTimePicker();
             this.LblDateRecieved = new System.Windows.Forms.Label();
             this.LblFrom = new System.Windows.Forms.Label();
-            this.CmbBoxFrom = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.topic = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cats = new System.Windows.Forms.ComboBox();
+            this.status = new System.Windows.Forms.ComboBox();
             this.LblAnySpecialNotes = new System.Windows.Forms.Label();
             this.LblStatus = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.deadlinedate = new System.Windows.Forms.DateTimePicker();
             this.LblDeadline = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -79,12 +81,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
+            this.notify = new System.Windows.Forms.CheckedListBox();
+            this.lecs = new System.Windows.Forms.CheckedListBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchresults)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.Update.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -158,16 +161,6 @@
             this.button2.Text = "View ";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(36, 135);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(278, 115);
-            this.textBox2.TabIndex = 59;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -190,15 +183,15 @@
             this.label1.TabIndex = 57;
             this.label1.Text = "Type a keyword here";
             // 
-            // textBox1
+            // keywordtxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(34, 39);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(278, 26);
-            this.textBox1.TabIndex = 56;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.keywordtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keywordtxt.Location = new System.Drawing.Point(34, 39);
+            this.keywordtxt.Margin = new System.Windows.Forms.Padding(2);
+            this.keywordtxt.Name = "keywordtxt";
+            this.keywordtxt.Size = new System.Drawing.Size(278, 26);
+            this.keywordtxt.TabIndex = 56;
+            this.keywordtxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tabControl1
             // 
@@ -211,14 +204,15 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(930, 552);
             this.tabControl1.TabIndex = 85;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.searchresults);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.keywordtxt);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox2);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.textBox3);
@@ -234,34 +228,80 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // searchresults
+            // 
+            this.searchresults.AllowUserToAddRows = false;
+            this.searchresults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchresults.Location = new System.Drawing.Point(34, 121);
+            this.searchresults.Name = "searchresults";
+            this.searchresults.ReadOnly = true;
+            this.searchresults.Size = new System.Drawing.Size(278, 150);
+            this.searchresults.TabIndex = 76;
+            this.searchresults.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.searchresults_RowHeaderMouseClick);
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.notificationstxt);
+            this.groupBox1.Controls.Add(this.lblsender);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.progresstxt);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.lblstatusdoc);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.lbldead);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.lbltopic);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.lbldate);
             this.groupBox1.Location = new System.Drawing.Point(426, 36);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(469, 467);
             this.groupBox1.TabIndex = 75;
             this.groupBox1.TabStop = false;
             // 
-            // richTextBox1
+            // notificationstxt
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(195, 266);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(255, 138);
-            this.richTextBox1.TabIndex = 74;
-            this.richTextBox1.Text = "";
+            this.notificationstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notificationstxt.Location = new System.Drawing.Point(195, 196);
+            this.notificationstxt.Name = "notificationstxt";
+            this.notificationstxt.ReadOnly = true;
+            this.notificationstxt.Size = new System.Drawing.Size(245, 57);
+            this.notificationstxt.TabIndex = 77;
+            this.notificationstxt.Text = "";
+            // 
+            // lblsender
+            // 
+            this.lblsender.AutoSize = true;
+            this.lblsender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsender.Location = new System.Drawing.Point(191, 133);
+            this.lblsender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblsender.Name = "lblsender";
+            this.lblsender.Size = new System.Drawing.Size(101, 20);
+            this.lblsender.TabIndex = 76;
+            this.lblsender.Text = "20XX.XX.XX";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(22, 131);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 20);
+            this.label6.TabIndex = 75;
+            this.label6.Text = "Sender";
+            // 
+            // progresstxt
+            // 
+            this.progresstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progresstxt.Location = new System.Drawing.Point(195, 266);
+            this.progresstxt.Name = "progresstxt";
+            this.progresstxt.Size = new System.Drawing.Size(255, 138);
+            this.progresstxt.TabIndex = 74;
+            this.progresstxt.Text = "";
             // 
             // button7
             // 
@@ -284,17 +324,6 @@
             this.label7.TabIndex = 68;
             this.label7.Text = "Recieved on - ";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(191, 194);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(115, 20);
-            this.label21.TabIndex = 73;
-            this.label21.Text = "All Senior Staff";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -306,60 +335,61 @@
             this.label9.TabIndex = 69;
             this.label9.Text = "Topic";
             // 
-            // label20
+            // lblstatusdoc
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(191, 149);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(77, 20);
-            this.label20.TabIndex = 73;
-            this.label20.Text = "URGENT";
+            this.lblstatusdoc.AutoSize = true;
+            this.lblstatusdoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblstatusdoc.Location = new System.Drawing.Point(191, 162);
+            this.lblstatusdoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblstatusdoc.Name = "lblstatusdoc";
+            this.lblstatusdoc.Size = new System.Drawing.Size(77, 20);
+            this.lblstatusdoc.TabIndex = 73;
+            this.lblstatusdoc.Text = "URGENT";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(22, 106);
+            this.label8.Location = new System.Drawing.Point(22, 102);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 20);
             this.label8.TabIndex = 70;
             this.label8.Text = "Dead Line";
             // 
-            // label19
+            // lbldead
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(191, 106);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(101, 20);
-            this.label19.TabIndex = 73;
-            this.label19.Text = "20XX.XX.XX";
+            this.lbldead.AutoSize = true;
+            this.lbldead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldead.Location = new System.Drawing.Point(191, 102);
+            this.lbldead.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbldead.Name = "lbldead";
+            this.lbldead.Size = new System.Drawing.Size(101, 20);
+            this.lbldead.TabIndex = 73;
+            this.lbldead.Text = "20XX.XX.XX";
+            this.lbldead.Click += new System.EventHandler(this.lbldead_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(22, 149);
+            this.label10.Location = new System.Drawing.Point(22, 162);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 20);
             this.label10.TabIndex = 71;
             this.label10.Text = "Status";
             // 
-            // label18
+            // lbltopic
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(191, 69);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(259, 20);
-            this.label18.TabIndex = 73;
-            this.label18.Text = "XXXXX XXXXX XXXXXXXXXXXX";
+            this.lbltopic.AutoSize = true;
+            this.lbltopic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltopic.Location = new System.Drawing.Point(191, 69);
+            this.lbltopic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbltopic.Name = "lbltopic";
+            this.lbltopic.Size = new System.Drawing.Size(259, 20);
+            this.lbltopic.TabIndex = 73;
+            this.lbltopic.Text = "XXXXX XXXXX XXXXXXXXXXXX";
             // 
             // label11
             // 
@@ -372,16 +402,16 @@
             this.label11.TabIndex = 72;
             this.label11.Text = "Notified to -";
             // 
-            // label17
+            // lbldate
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(191, 32);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(101, 20);
-            this.label17.TabIndex = 73;
-            this.label17.Text = "20XX.XX.XX";
+            this.lbldate.AutoSize = true;
+            this.lbldate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldate.Location = new System.Drawing.Point(191, 32);
+            this.lbldate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbldate.Name = "lbldate";
+            this.lbldate.Size = new System.Drawing.Size(101, 20);
+            this.lbldate.TabIndex = 73;
+            this.lbldate.Text = "20XX.XX.XX";
             // 
             // Update
             // 
@@ -403,19 +433,19 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Controls.Add(this.senderdoc);
+            this.panel3.Controls.Add(this.keywords);
             this.panel3.Controls.Add(this.RecievedDatePicker);
             this.panel3.Controls.Add(this.LblDateRecieved);
             this.panel3.Controls.Add(this.LblFrom);
-            this.panel3.Controls.Add(this.CmbBoxFrom);
-            this.panel3.Controls.Add(this.textBox5);
+            this.panel3.Controls.Add(this.topic);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.comboBox1);
-            this.panel3.Controls.Add(this.comboBox2);
+            this.panel3.Controls.Add(this.cats);
+            this.panel3.Controls.Add(this.status);
             this.panel3.Controls.Add(this.LblAnySpecialNotes);
             this.panel3.Controls.Add(this.LblStatus);
-            this.panel3.Controls.Add(this.dateTimePicker1);
+            this.panel3.Controls.Add(this.deadlinedate);
             this.panel3.Controls.Add(this.LblDeadline);
             this.panel3.Location = new System.Drawing.Point(2, 5);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
@@ -423,14 +453,23 @@
             this.panel3.Size = new System.Drawing.Size(375, 465);
             this.panel3.TabIndex = 125;
             // 
-            // textBox4
+            // senderdoc
             // 
-            this.textBox4.Location = new System.Drawing.Point(20, 283);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(318, 136);
-            this.textBox4.TabIndex = 103;
+            this.senderdoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.senderdoc.Location = new System.Drawing.Point(137, 59);
+            this.senderdoc.Name = "senderdoc";
+            this.senderdoc.Size = new System.Drawing.Size(214, 26);
+            this.senderdoc.TabIndex = 106;
+            // 
+            // keywords
+            // 
+            this.keywords.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keywords.Location = new System.Drawing.Point(20, 283);
+            this.keywords.Margin = new System.Windows.Forms.Padding(2);
+            this.keywords.Multiline = true;
+            this.keywords.Name = "keywords";
+            this.keywords.Size = new System.Drawing.Size(318, 136);
+            this.keywords.TabIndex = 103;
             // 
             // RecievedDatePicker
             // 
@@ -463,24 +502,14 @@
             this.LblFrom.TabIndex = 94;
             this.LblFrom.Text = "From";
             // 
-            // CmbBoxFrom
+            // topic
             // 
-            this.CmbBoxFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CmbBoxFrom.FormattingEnabled = true;
-            this.CmbBoxFrom.Location = new System.Drawing.Point(137, 57);
-            this.CmbBoxFrom.Margin = new System.Windows.Forms.Padding(2);
-            this.CmbBoxFrom.Name = "CmbBoxFrom";
-            this.CmbBoxFrom.Size = new System.Drawing.Size(214, 28);
-            this.CmbBoxFrom.TabIndex = 95;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(137, 95);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(214, 26);
-            this.textBox5.TabIndex = 105;
+            this.topic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topic.Location = new System.Drawing.Point(137, 95);
+            this.topic.Margin = new System.Windows.Forms.Padding(2);
+            this.topic.Name = "topic";
+            this.topic.Size = new System.Drawing.Size(214, 26);
+            this.topic.TabIndex = 105;
             // 
             // label5
             // 
@@ -504,30 +533,30 @@
             this.label12.TabIndex = 104;
             this.label12.Text = "Topic";
             // 
-            // comboBox1
+            // cats
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 129);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 28);
-            this.comboBox1.TabIndex = 98;
+            this.cats.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cats.FormattingEnabled = true;
+            this.cats.Location = new System.Drawing.Point(137, 129);
+            this.cats.Margin = new System.Windows.Forms.Padding(2);
+            this.cats.Name = "cats";
+            this.cats.Size = new System.Drawing.Size(220, 28);
+            this.cats.TabIndex = 98;
             // 
-            // comboBox2
+            // status
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status.FormattingEnabled = true;
+            this.status.Items.AddRange(new object[] {
             "Very Urgent",
             "Urgent",
             "Moderate",
             "Not at all"});
-            this.comboBox2.Location = new System.Drawing.Point(137, 162);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(91, 28);
-            this.comboBox2.TabIndex = 97;
+            this.status.Location = new System.Drawing.Point(137, 162);
+            this.status.Margin = new System.Windows.Forms.Padding(2);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(91, 28);
+            this.status.TabIndex = 97;
             // 
             // LblAnySpecialNotes
             // 
@@ -551,14 +580,14 @@
             this.LblStatus.TabIndex = 99;
             this.LblStatus.Text = "Status";
             // 
-            // dateTimePicker1
+            // deadlinedate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(137, 198);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 26);
-            this.dateTimePicker1.TabIndex = 101;
+            this.deadlinedate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deadlinedate.Location = new System.Drawing.Point(137, 198);
+            this.deadlinedate.Margin = new System.Windows.Forms.Padding(2);
+            this.deadlinedate.Name = "deadlinedate";
+            this.deadlinedate.Size = new System.Drawing.Size(151, 26);
+            this.deadlinedate.TabIndex = 101;
             // 
             // LblDeadline
             // 
@@ -674,8 +703,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.checkedListBox2);
-            this.panel1.Controls.Add(this.checkedListBox3);
+            this.panel1.Controls.Add(this.notify);
+            this.panel1.Controls.Add(this.lecs);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Location = new System.Drawing.Point(396, 5);
@@ -684,12 +713,12 @@
             this.panel1.Size = new System.Drawing.Size(524, 206);
             this.panel1.TabIndex = 123;
             // 
-            // checkedListBox2
+            // notify
             // 
-            this.checkedListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
+            this.notify.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.notify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notify.FormattingEnabled = true;
+            this.notify.Items.AddRange(new object[] {
             "Related to Category",
             "Only HOD",
             "All Senior Lecturer Staff",
@@ -697,27 +726,23 @@
             "All Temporary Staff",
             "All",
             "Custom"});
-            this.checkedListBox2.Location = new System.Drawing.Point(29, 29);
-            this.checkedListBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(215, 147);
-            this.checkedListBox2.TabIndex = 107;
+            this.notify.Location = new System.Drawing.Point(29, 29);
+            this.notify.Margin = new System.Windows.Forms.Padding(2);
+            this.notify.Name = "notify";
+            this.notify.Size = new System.Drawing.Size(215, 147);
+            this.notify.TabIndex = 107;
+            this.notify.SelectedIndexChanged += new System.EventHandler(this.checkedListBox2_SelectedIndexChanged);
             // 
-            // checkedListBox3
+            // lecs
             // 
-            this.checkedListBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox3.FormattingEnabled = true;
-            this.checkedListBox3.Items.AddRange(new object[] {
-            "Dr.Chathura Rajapakshe",
-            "Dr.Janaka Wijenayake",
-            "Dr.Shantha Jayalal",
-            "Dr.Annista Wijenayake",
-            "Dr.Ruwan Wickramarchchi"});
-            this.checkedListBox3.Location = new System.Drawing.Point(263, 29);
-            this.checkedListBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.checkedListBox3.Name = "checkedListBox3";
-            this.checkedListBox3.Size = new System.Drawing.Size(213, 130);
-            this.checkedListBox3.TabIndex = 117;
+            this.lecs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lecs.FormattingEnabled = true;
+            this.lecs.Location = new System.Drawing.Point(263, 29);
+            this.lecs.Margin = new System.Windows.Forms.Padding(2);
+            this.lecs.Name = "lecs";
+            this.lecs.Size = new System.Drawing.Size(240, 151);
+            this.lecs.TabIndex = 117;
+            this.lecs.SelectedIndexChanged += new System.EventHandler(this.lecs_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -756,6 +781,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchresults)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.Update.ResumeLayout(false);
@@ -776,10 +802,9 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox keywordtxt;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label11;
@@ -788,25 +813,23 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage Update;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblstatusdoc;
+        private System.Windows.Forms.Label lbldead;
+        private System.Windows.Forms.Label lbltopic;
+        private System.Windows.Forms.Label lbldate;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox keywords;
         private System.Windows.Forms.DateTimePicker RecievedDatePicker;
         private System.Windows.Forms.Label LblDateRecieved;
         private System.Windows.Forms.Label LblFrom;
-        private System.Windows.Forms.ComboBox CmbBoxFrom;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox topic;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cats;
+        private System.Windows.Forms.ComboBox status;
         private System.Windows.Forms.Label LblAnySpecialNotes;
         private System.Windows.Forms.Label LblStatus;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker deadlinedate;
         private System.Windows.Forms.Label LblDeadline;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel2;
@@ -818,12 +841,17 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
-        private System.Windows.Forms.CheckedListBox checkedListBox3;
+        private System.Windows.Forms.CheckedListBox notify;
+        private System.Windows.Forms.CheckedListBox lecs;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox progresstxt;
+        private System.Windows.Forms.DataGridView searchresults;
+        private System.Windows.Forms.Label lblsender;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RichTextBox notificationstxt;
+        private System.Windows.Forms.TextBox senderdoc;
     }
 }

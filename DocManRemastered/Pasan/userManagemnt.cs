@@ -22,6 +22,7 @@ namespace docman.Classes
                 SqlCommand insertCommand = new SqlCommand("INSERT INTO Users (designation,firstName,lastName,username, password,email,accesslevel ) VALUES (@0, @1, @2,@3,@4,@5,@6)", conn.connection());
 
 
+
                 insertCommand.Parameters.Add(new SqlParameter("@0", designation));
                 insertCommand.Parameters.Add(new SqlParameter("@1", firstName));
                 insertCommand.Parameters.Add(new SqlParameter("@2", lastName));

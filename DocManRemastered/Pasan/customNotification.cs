@@ -23,7 +23,7 @@ namespace docman.Classes
             ch1.DataSource = ds.Tables[0];
 
             ch1.DisplayMember = "lecName";
-            ch1.ValueMember = "lecName";
+            ch1.ValueMember = "staffID";                      
 
 
 
