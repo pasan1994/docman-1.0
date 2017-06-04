@@ -57,6 +57,7 @@
             this.lbldate = new System.Windows.Forms.Label();
             this.Update = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.keywords = new System.Windows.Forms.RichTextBox();
             this.senderdoc = new System.Windows.Forms.TextBox();
             this.RecievedDatePicker = new System.Windows.Forms.DateTimePicker();
             this.LblDateRecieved = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@
             this.lecs = new System.Windows.Forms.CheckedListBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.keywords = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchresults)).BeginInit();
@@ -99,7 +99,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 266);
+            this.label4.Location = new System.Drawing.Point(22, 318);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 20);
@@ -268,7 +268,7 @@
             this.notificationstxt.Location = new System.Drawing.Point(195, 196);
             this.notificationstxt.Name = "notificationstxt";
             this.notificationstxt.ReadOnly = true;
-            this.notificationstxt.Size = new System.Drawing.Size(245, 57);
+            this.notificationstxt.Size = new System.Drawing.Size(245, 116);
             this.notificationstxt.TabIndex = 77;
             this.notificationstxt.Text = "";
             // 
@@ -297,9 +297,9 @@
             // progresstxt
             // 
             this.progresstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progresstxt.Location = new System.Drawing.Point(195, 266);
+            this.progresstxt.Location = new System.Drawing.Point(195, 318);
             this.progresstxt.Name = "progresstxt";
-            this.progresstxt.Size = new System.Drawing.Size(255, 138);
+            this.progresstxt.Size = new System.Drawing.Size(255, 86);
             this.progresstxt.TabIndex = 74;
             this.progresstxt.Text = "";
             // 
@@ -452,6 +452,14 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(375, 465);
             this.panel3.TabIndex = 125;
+            // 
+            // keywords
+            // 
+            this.keywords.Location = new System.Drawing.Point(14, 285);
+            this.keywords.Name = "keywords";
+            this.keywords.Size = new System.Drawing.Size(324, 155);
+            this.keywords.TabIndex = 107;
+            this.keywords.Text = "";
             // 
             // senderdoc
             // 
@@ -756,14 +764,6 @@
             this.label16.Size = new System.Drawing.Size(147, 20);
             this.label16.TabIndex = 110;
             this.label16.Text = "Custom Notification";
-            // 
-            // keywords
-            // 
-            this.keywords.Location = new System.Drawing.Point(14, 285);
-            this.keywords.Name = "keywords";
-            this.keywords.Size = new System.Drawing.Size(324, 155);
-            this.keywords.TabIndex = 107;
-            this.keywords.Text = "";
             // 
             // SearchDoc
             // 

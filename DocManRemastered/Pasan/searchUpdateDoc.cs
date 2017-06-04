@@ -227,7 +227,7 @@ namespace docman.Classes
             
             String ID = dv.SelectedRows[0].Cells[2].Value.ToString();
           
-         /*   SqlCommand readcommand3;
+           SqlCommand readcommand3;
             readcommand3 = new SqlCommand("Update files SET date_Recieved=@date where doc_ID=" + ID + " ", conn.connection());
             readcommand3.Parameters.AddWithValue("@date", date.Value);
             readcommand3.ExecuteNonQuery();
@@ -245,39 +245,73 @@ namespace docman.Classes
             readcommand3.ExecuteNonQuery();
             readcommand3 = new SqlCommand("Update files SET  keywords=@keywords where doc_ID=" + ID + " ", conn.connection());
             readcommand3.Parameters.AddWithValue("@keywords", keywords.Text);
-            readcommand3.ExecuteNonQuery();*/
-            getItems(notifications,false);
-            getItems(custom,true);
+            readcommand3.ExecuteNonQuery();
+            getItems(notifications,false,ID);
+            getItems(custom,true,ID);
+
+
 
         }
 
-        private void getItems(CheckedListBox ch2,bool value)
+        private void getItems(CheckedListBox ch2, bool value, String ID)
         {
-           
-            if(value==true)
-            for (int x = 0; x < ch2.Items.Count; x++)
+            SqlCommand insert = null;
+            bool check = true;
+            try
             {
-                if (ch2.GetItemChecked(x))
-                {
-                    Console.WriteLine(ch2.SelectedValue);
 
-                }
+                if (value == true)
+                    foreach (object itemChecked in ch2.CheckedItems)
+                    {
+                        DataRowView castedItem = itemChecked as DataRowView;
+                        string id = castedItem["staffID"].ToString();
+                       
+                            foreach (String s in customNotifications)
+                                if (id== s)
+                                    check = false;
 
+                           if(check==true)
+                              {
+                                    insert = new SqlCommand("INSERT INTO customNotifications (docID,staffID) VALUES (@ID,@staffID)", conn.connection());
+                                    insert.Parameters.AddWithValue("@ID", ID);
+                                    insert.Parameters.AddWithValue("@staffID",id);
+                                    insert.ExecuteNonQuery();
+                                }
+                                
+                        
+
+
+                    }
+
+                if (value == false)
+                    for (int x = 0; x < ch2.Items.Count; x++)
+                    {
+                        if (ch2.GetItemChecked(x))
+                        {
+                          
+                            foreach (String s in notifications)
+                                if (ch2.Items[x].ToString() == s)
+                                    check = false;
+                            if(check==true)
+                                {
+                                    insert = new SqlCommand("INSERT INTO  notifications (docID,notified) VALUES (@ID,@notified)", conn.connection());
+                                    insert.Parameters.AddWithValue("@ID", ID);
+                                    insert.Parameters.AddWithValue("@notified", ch2.Items[x].ToString());
+                                    insert.ExecuteNonQuery();
+                                }
+                            
+                        }
+
+
+                    }
+                if (insert != null)
+                    insert.Dispose();
 
             }
-
-            if(value==false)
-            for (int x = 0; x < ch2.Items.Count; x++)
+            catch (Exception f)
             {
-                if (ch2.GetItemChecked(x))
-                {
-                    //Console.WriteLine(ch2.GetItemText());
-
-                }
-
-
+                MessageBox.Show(f.Message);
             }
-
         }
 
         public void loadCategories(ComboBox cat)

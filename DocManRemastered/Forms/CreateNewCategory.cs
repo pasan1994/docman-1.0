@@ -1,4 +1,5 @@
-﻿using System;
+﻿using docman.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace DocManRemastered
 {
     public partial class CreateNewCategory : Form
     {
+        customNotification newMain = new customNotification();
+        docman.Classes.Categories newcat = new docman.Classes.Categories();
         public CreateNewCategory()
         {
             InitializeComponent();
@@ -19,12 +22,17 @@ namespace DocManRemastered
 
         private void CreateNewCategory_Load(object sender, EventArgs e)
         {
+          
+            newMain.customToCat(staff);
+
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            String namecat = name.Text;
+            String staffcat = staff.SelectedValue.ToString();
+            newcat.newMainCategory(namecat,staffcat);
         }
     }
 }

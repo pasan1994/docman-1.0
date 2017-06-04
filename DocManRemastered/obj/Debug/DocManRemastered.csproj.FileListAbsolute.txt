@@ -88,7 +88,6 @@ H:\EDUCATIONAL\My work\2nd Year\New folder\docman-1.0\DocManRemastered\obj\Debug
 D:\MIT\C# Project\docman 1.0\DocManRemastered\bin\Debug\DocManRemastered.exe.config
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.exe
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.pdb
-D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.csprojResolveAssemblyReference.cache
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.Buttons.resources
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.Categories.resources
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.CreateNewCategory.resources
@@ -102,3 +101,5 @@ D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.uploadD
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.csproj.GenerateResource.Cache
 D:\MIT\C# Project\docman 1.0\DocManRemastered\bin\Debug\DocManRemastered.exe
 D:\MIT\C# Project\docman 1.0\DocManRemastered\bin\Debug\DocManRemastered.pdb
+D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.csprojResolveAssemblyReference.cache
+D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.New_Sub_Category.resources
