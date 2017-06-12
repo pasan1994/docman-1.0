@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocManRemastered.Pasan;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,14 +57,34 @@ namespace DocManRemastered
 
         private void button1_Click(object sender, EventArgs e)
         {
-            main mdi = new main();
-
+            String ID = null;
+            String usernametxt = username.Text;
+            String passwordtxt = Password.Text;
+            userLogin login = new userLogin();
+            ID=login.userLog(usernametxt,passwordtxt);
+            if (ID != null)
+            {
+                main mdi = new main();
+                mdi.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                username.Clear();
+                Password.Clear();
+            }
             
-            mdi.ShowDialog();
-            this.Close();
 
-            
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void username_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

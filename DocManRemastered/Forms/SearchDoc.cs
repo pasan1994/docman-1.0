@@ -1,4 +1,5 @@
 ﻿using docman.Classes;
+using DocManRemastered.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace DocManRemastered
 
         searchUpdateDoc SD = new searchUpdateDoc();
         customNotification CN = new customNotification();
+        String ID;
         public SearchDoc()
         {
             InitializeComponent();
@@ -55,8 +57,8 @@ namespace DocManRemastered
 
         private void searchresults_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            SD.docINFO(ref searchresults, ref lbldate, ref lblsender, ref  lbltopic, ref lblstatusdoc, ref lbldead, ref  notificationstxt, ref progresstxt);
-            SD.toUpdate(ref searchresults, RecievedDatePicker, senderdoc, topic, status, deadlinedate, notify, lecs, keywords);
+            ID=SD.docINFO(ref searchresults, ref lbldate, ref lblsender, ref  lbltopic, ref lblstatusdoc, ref lbldead, ref  notificationstxt);
+            SD.toUpdate(ref searchresults, RecievedDatePicker, senderdoc, topic, status, deadlinedate, notify, lecs, keywords,cats);
 
         }
 
@@ -82,7 +84,13 @@ namespace DocManRemastered
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SD.updateDetails(ref searchresults, RecievedDatePicker, senderdoc, topic, status, deadlinedate, notify, lecs,keywords);
+            SD.updateDetails(ref searchresults, RecievedDatePicker, senderdoc, topic, status, deadlinedate, notify, lecs,keywords,cats);
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            Progress pr = new Progress(ID);
+            pr.ShowDialog();
         }
     }
 }

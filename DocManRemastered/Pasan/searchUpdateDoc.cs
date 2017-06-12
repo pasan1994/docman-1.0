@@ -52,7 +52,7 @@ namespace docman.Classes
             dv.Columns[7].Visible = false;
             dv.Columns[8].Visible = false;
             dv.Columns[9].Visible = false;
-            dv.Columns[10].Visible = false;
+          
 
 
             dtRecord.Dispose();
@@ -64,7 +64,7 @@ namespace docman.Classes
 
         }
 
-        public void docINFO(ref DataGridView dv, ref Label lbldate, ref Label lblsender, ref Label lbltopic, ref Label lblstatus, ref Label lbldeadline, ref RichTextBox lblnotifications, ref RichTextBox lblprogress)
+        public String  docINFO(ref DataGridView dv, ref Label lbldate, ref Label lblsender, ref Label lbltopic, ref Label lblstatus, ref Label lbldeadline, ref RichTextBox lblnotifications)
         {
             if (conn.connection().State == System.Data.ConnectionState.Closed)
                 conn.connection().Open();
@@ -73,12 +73,13 @@ namespace docman.Classes
             if (conn.connection().State == System.Data.ConnectionState.Closed)
                 conn.connection().Open();
 
-              lbldate.Text = dv.SelectedRows[0].Cells[3].Value.ToString();
+            String ID= dv.SelectedRows[0].Cells[2].Value.ToString();
+            lbldate.Text = dv.SelectedRows[0].Cells[3].Value.ToString();
               lblsender.Text = dv.SelectedRows[0].Cells[4].Value.ToString();
               lbltopic.Text = dv.SelectedRows[0].Cells[5].Value.ToString();
              lblstatus.Text = dv.SelectedRows[0].Cells[7].Value.ToString();
               lbldeadline.Text = dv.SelectedRows[0].Cells[8].Value.ToString();
-                lblprogress.Text = dv.SelectedRows[0].Cells[10].Value.ToString();
+              
 
             SqlCommand readcommand = new SqlCommand("SELECT notified from notifications where docID=" + dv.SelectedRows[0].Cells[2].Value.ToString()+ " ", conn.connection());
             SqlDataReader reader = readcommand.ExecuteReader();
@@ -105,11 +106,12 @@ namespace docman.Classes
             reader.Close();
             readcommand.Dispose();
             conn.closeConnection();
+            return ID;
 
         }
        
 
-        public void toUpdate(ref DataGridView dv, DateTimePicker date, TextBox sender, TextBox topic, ComboBox status, DateTimePicker deadline, CheckedListBox notify, CheckedListBox custom, RichTextBox keywords)
+        public void toUpdate(ref DataGridView dv, DateTimePicker date, TextBox sender, TextBox topic, ComboBox status, DateTimePicker deadline, CheckedListBox notify, CheckedListBox custom, RichTextBox keywords, ComboBox category)
         {
            
             bool customNoty = false;
@@ -118,7 +120,7 @@ namespace docman.Classes
                 conn.connection().Open();
             try
             {
-
+                category.Text = dv.SelectedRows[0].Cells[0].Value.ToString();
                 date.Value = (DateTime)(dv.SelectedRows[0].Cells[3].Value);
                 sender.Text = dv.SelectedRows[0].Cells[4].Value.ToString();
                 topic.Text = dv.SelectedRows[0].Cells[5].Value.ToString();
@@ -219,7 +221,7 @@ namespace docman.Classes
             ch.SetItemChecked(index, true);
         }
 
-        public void updateDetails(ref DataGridView dv, DateTimePicker date, TextBox sender, TextBox topic, ComboBox status, DateTimePicker deadline, CheckedListBox notifications, CheckedListBox custom, RichTextBox keywords)
+        public void updateDetails(ref DataGridView dv, DateTimePicker date, TextBox sender, TextBox topic, ComboBox status, DateTimePicker deadline, CheckedListBox notifications, CheckedListBox custom, RichTextBox keywords,ComboBox category)
         {
             if (conn.connection().State == System.Data.ConnectionState.Closed)
                 conn.connection().Open();
@@ -228,6 +230,9 @@ namespace docman.Classes
             String ID = dv.SelectedRows[0].Cells[2].Value.ToString();
           
            SqlCommand readcommand3;
+            readcommand3 = new SqlCommand("Update files SET catID=@category where doc_ID=" + ID + " ", conn.connection());
+            readcommand3.Parameters.AddWithValue("@category",category.SelectedValue);
+            readcommand3.ExecuteNonQuery();
             readcommand3 = new SqlCommand("Update files SET date_Recieved=@date where doc_ID=" + ID + " ", conn.connection());
             readcommand3.Parameters.AddWithValue("@date", date.Value);
             readcommand3.ExecuteNonQuery();
@@ -342,6 +347,75 @@ namespace docman.Classes
             }
 
         }
+
+
+        public void progressLoad(String docID, DataGridView progress)
+        {
+
+            if (conn.connection().State == System.Data.ConnectionState.Closed)
+                conn.connection().Open();
+
+            DataTable dtRecord = new DataTable();
+         SqlCommand   readcommand = new SqlCommand("select * from progress where docID=@docID ", conn.connection());
+            readcommand.Parameters.AddWithValue("@docID",docID);
+            SqlDataAdapter adapter = new SqlDataAdapter(readcommand);
+            try
+            {
+                adapter.Fill(dtRecord);
+
+
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+            readcommand.Dispose();
+            adapter.Dispose();
+
+            progress.DataSource = dtRecord;
+            dtRecord.Dispose();
+            conn.closeConnection();
+        }
+
+        public void insertProgress(String ID,String progress, DateTime? deadline,String status)
+        {
+            if (conn.connection().State == System.Data.ConnectionState.Closed)
+                conn.connection().Open();
+
+            try
+            {
+                SqlCommand insertCommand = new SqlCommand("INSERT INTO progress (docID,progress,deadline,status) VALUES (@0, @1, @2,@3)", conn.connection());
+
+
+                insertCommand.Parameters.Add(new SqlParameter("@0", ID));
+                insertCommand.Parameters.Add(new SqlParameter("@1", progress));
+                insertCommand.Parameters.Add(new SqlParameter("@2", (object)deadline ?? DBNull.Value));
+                insertCommand.Parameters.Add(new SqlParameter("@3", status));
+
+                insertCommand.ExecuteNonQuery();
+                insertCommand.Dispose();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+
+            
+            conn.closeConnection();
+        }
+
+        public void loadUpdateProgress(DataGridView dv ,RichTextBox rt, DateTimePicker dt, CheckBox ch)
+        {
+            rt.Text = dv.SelectedRows[0].Cells[2].ToString();
+            if (dv.SelectedRows[0].Cells[3].Value != DBNull.Value)
+            {
+                dt.Value = (DateTime)dv.SelectedRows[0].Cells[3].Value;
+                dt.Checked = true;
+            }
+            if(dv.SelectedRows[0].Cells[4].ToString()=="Resolved")
+            ch.Checked = true;
+
+        }
+
 
     }
         

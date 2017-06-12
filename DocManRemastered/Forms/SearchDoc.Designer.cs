@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -44,7 +43,6 @@
             this.notificationstxt = new System.Windows.Forms.RichTextBox();
             this.lblsender = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.progresstxt = new System.Windows.Forms.RichTextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -94,17 +92,6 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 318);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 20);
-            this.label4.TabIndex = 66;
-            this.label4.Text = "Current Progress";
             // 
             // label3
             // 
@@ -202,7 +189,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(930, 552);
+            this.tabControl1.Size = new System.Drawing.Size(936, 556);
             this.tabControl1.TabIndex = 85;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -222,7 +209,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(922, 519);
+            this.tabPage1.Size = new System.Drawing.Size(928, 523);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Search";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -244,9 +231,7 @@
             this.groupBox1.Controls.Add(this.notificationstxt);
             this.groupBox1.Controls.Add(this.lblsender);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.progresstxt);
             this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.lblstatusdoc);
@@ -256,9 +241,9 @@
             this.groupBox1.Controls.Add(this.lbltopic);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.lbldate);
-            this.groupBox1.Location = new System.Drawing.Point(426, 36);
+            this.groupBox1.Location = new System.Drawing.Point(426, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(469, 467);
+            this.groupBox1.Size = new System.Drawing.Size(479, 520);
             this.groupBox1.TabIndex = 75;
             this.groupBox1.TabStop = false;
             // 
@@ -268,7 +253,7 @@
             this.notificationstxt.Location = new System.Drawing.Point(195, 196);
             this.notificationstxt.Name = "notificationstxt";
             this.notificationstxt.ReadOnly = true;
-            this.notificationstxt.Size = new System.Drawing.Size(245, 116);
+            this.notificationstxt.Size = new System.Drawing.Size(245, 184);
             this.notificationstxt.TabIndex = 77;
             this.notificationstxt.Text = "";
             // 
@@ -294,24 +279,16 @@
             this.label6.TabIndex = 75;
             this.label6.Text = "Sender";
             // 
-            // progresstxt
-            // 
-            this.progresstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progresstxt.Location = new System.Drawing.Point(195, 318);
-            this.progresstxt.Name = "progresstxt";
-            this.progresstxt.Size = new System.Drawing.Size(255, 86);
-            this.progresstxt.TabIndex = 74;
-            this.progresstxt.Text = "";
-            // 
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(302, 422);
+            this.button7.Location = new System.Drawing.Point(26, 426);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(148, 34);
+            this.button7.Size = new System.Drawing.Size(233, 34);
             this.button7.TabIndex = 74;
-            this.button7.Text = "Update Progress";
+            this.button7.Text = "View and Update Progress";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // label7
             // 
@@ -424,7 +401,7 @@
             this.Update.Margin = new System.Windows.Forms.Padding(2);
             this.Update.Name = "Update";
             this.Update.Padding = new System.Windows.Forms.Padding(2);
-            this.Update.Size = new System.Drawing.Size(922, 519);
+            this.Update.Size = new System.Drawing.Size(928, 523);
             this.Update.TabIndex = 1;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = true;
@@ -770,7 +747,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(964, 577);
+            this.ClientSize = new System.Drawing.Size(978, 608);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -795,7 +772,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
@@ -845,7 +821,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox progresstxt;
         private System.Windows.Forms.DataGridView searchresults;
         private System.Windows.Forms.Label lblsender;
         private System.Windows.Forms.Label label6;

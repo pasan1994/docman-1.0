@@ -103,3 +103,4 @@ D:\MIT\C# Project\docman 1.0\DocManRemastered\bin\Debug\DocManRemastered.exe
 D:\MIT\C# Project\docman 1.0\DocManRemastered\bin\Debug\DocManRemastered.pdb
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.csprojResolveAssemblyReference.cache
 D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.New_Sub_Category.resources
+D:\MIT\C# Project\docman 1.0\DocManRemastered\obj\Debug\DocManRemastered.Forms.Progress.resources

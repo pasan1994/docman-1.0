@@ -52,6 +52,12 @@
     <Compile Include="Forms\New Sub Category.Designer.cs">
       <DependentUpon>New Sub Category.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Progress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Progress.Designer.cs">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pasan\Categories.cs" />
     <Compile Include="Pasan\customNotification.cs" />
     <Compile Include="Forms\Buttons.cs">
@@ -91,6 +97,7 @@
       <DependentUpon>NewsFeed.cs</DependentUpon>
     </Compile>
     <Compile Include="Pasan\makeConnection.cs" />
+    <Compile Include="Pasan\userLogin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\SearchDoc.cs">
@@ -133,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\New Sub Category.resx">
       <DependentUpon>New Sub Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Progress.resx">
+      <DependentUpon>Progress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

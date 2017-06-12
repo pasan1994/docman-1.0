@@ -32,12 +32,12 @@ namespace DocManRemastered
         {
             cn2.custom(custom);
             sd2.loadCategories(cate);
-            sd2.toUpdate(ref dv ,RecievedDatePicker,sender1,topic,status,deadline,notify,custom,keywords);
+            sd2.toUpdate(ref dv ,RecievedDatePicker,sender1,topic,status,deadline,notify,custom,keywords,cate);
         }
 
         private void update_Click(object sender, EventArgs e)
         {
-            sd2.updateDetails(ref dv, RecievedDatePicker, sender1, topic, status, deadline, notify, custom, keywords);
+            sd2.updateDetails(ref dv, RecievedDatePicker, sender1, topic, status, deadline, notify, custom, keywords,cate);
         }
     }
 }
