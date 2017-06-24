@@ -47,5 +47,16 @@ namespace DocManRemastered.Forms
         {
             SD.loadUpdateProgress(progressView,progresstxt,deadline,status);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DateTime? deaddt = null;
+            String statustxt = DBNull.Value.ToString();
+            if (deadline.Checked)
+                deaddt = deadline.Value;
+            if (status.Checked)
+                statustxt = "Resolved";
+            SD.updateProgress(progressView,progresstxt,deaddt,statustxt);
+        }
     }
 }

@@ -405,17 +405,46 @@ namespace docman.Classes
 
         public void loadUpdateProgress(DataGridView dv ,RichTextBox rt, DateTimePicker dt, CheckBox ch)
         {
-            rt.Text = dv.SelectedRows[0].Cells[2].ToString();
+            rt.Text = dv.SelectedRows[0].Cells[2].Value.ToString();
             if (dv.SelectedRows[0].Cells[3].Value != DBNull.Value)
             {
                 dt.Value = (DateTime)dv.SelectedRows[0].Cells[3].Value;
                 dt.Checked = true;
             }
-            if(dv.SelectedRows[0].Cells[4].ToString()=="Resolved")
+            else
+                dt.Checked = false;
+            if(dv.SelectedRows[0].Cells[4].Value.ToString()=="Resolved")
             ch.Checked = true;
-
+            else
+                ch.Checked = false;
         }
 
+        public void updateProgress(DataGridView dv,RichTextBox rt,DateTime? dt,String ch)
+        {
+            if (conn.connection().State == System.Data.ConnectionState.Closed)
+                conn.connection().Open();
+
+            try
+            {
+                String ID = dv.SelectedRows[0].Cells[1].Value.ToString();
+                SqlCommand readcommand3;
+                readcommand3 = new SqlCommand("Update progress SET progress=@progress where progressID=" + ID + " ", conn.connection());
+                readcommand3.Parameters.AddWithValue("@progress", rt.Text);
+                readcommand3.ExecuteNonQuery();
+                readcommand3 = new SqlCommand("Update progress SET deadline=@deadline where progressID=" + ID + " ", conn.connection());
+                readcommand3.Parameters.AddWithValue("@deadline", (object)dt ?? DBNull.Value);
+                readcommand3.ExecuteNonQuery();
+                readcommand3 = new SqlCommand("Update progress SET status=@status where progressID=" + ID + " ", conn.connection());
+                readcommand3.Parameters.AddWithValue("@status", ch);
+                readcommand3.ExecuteNonQuery();
+                readcommand3.Dispose();
+                conn.closeConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
     }
         

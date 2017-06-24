@@ -1,5 +1,6 @@
 ﻿using docman.Classes;
 using DocManRemastered.Forms;
+using DocManRemastered.Pasan;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace DocManRemastered
 
         searchUpdateDoc SD = new searchUpdateDoc();
         customNotification CN = new customNotification();
+        Tag tg = new Tag();
         String ID;
         public SearchDoc()
         {
@@ -59,6 +61,8 @@ namespace DocManRemastered
         {
             ID=SD.docINFO(ref searchresults, ref lbldate, ref lblsender, ref  lbltopic, ref lblstatusdoc, ref lbldead, ref  notificationstxt);
             SD.toUpdate(ref searchresults, RecievedDatePicker, senderdoc, topic, status, deadlinedate, notify, lecs, keywords,cats);
+            String ID2 = searchresults.SelectedRows[0].Cells[2].Value.ToString();
+            tg.tagDocs(ID2);
 
         }
 
