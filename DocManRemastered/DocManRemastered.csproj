@@ -97,7 +97,9 @@
       <DependentUpon>NewsFeed.cs</DependentUpon>
     </Compile>
     <Compile Include="Pasan\makeConnection.cs" />
+    <Compile Include="Pasan\Reminder.cs" />
     <Compile Include="Pasan\Tag.cs" />
+    <Compile Include="Pasan\uploadDocument.cs" />
     <Compile Include="Pasan\userLogin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

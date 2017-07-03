@@ -56,10 +56,25 @@ namespace DocManRemastered
             String email = emailtxt.Text;
             String level = accesscombo.SelectedItem.ToString();
             String password = pass.Text;
+            String confirpass = confirmpass.Text;
             String title = titleCombo.SelectedItem.ToString(); ;
-               
-            MessageBox.Show(title);
-            user.updateUser(email,level,password,title);
+
+            if (password.Equals(confirpass))
+            {
+                user.updateUser(email, level, password, title);
+                Buttons sd1 = new Buttons();
+                sd1.StartPosition = FormStartPosition.Manual;
+                sd1.Left = 250;
+                sd1.Top = 130;
+
+                sd1.MdiParent = this.MdiParent;
+                sd1.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Passwords do not match");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -71,7 +86,27 @@ namespace DocManRemastered
             String username = usName.Text;
             String password = passwordtxt.Text;
             String title = titlecomboadd.SelectedItem.ToString();
-            user.addNewUser(title,firstName,lastName,username,password,email,access);
+            String confpass = conpass.Text;
+            if (password.Equals(confpass))
+            {
+                user.addNewUser(title, firstName, lastName, username, password, email, access);
+                Buttons sd1 = new Buttons();
+                sd1.StartPosition = FormStartPosition.Manual;
+                sd1.Left = 250;
+                sd1.Top = 130;
+
+                sd1.MdiParent = this.MdiParent;
+                sd1.Show();
+                this.Close();
+
+
+            }
+            else
+            {
+                MessageBox.Show("Passwords do not match");
+                passwordtxt.Clear();
+                conpass.Clear();
+            }
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -100,6 +135,34 @@ namespace DocManRemastered
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            user.deleteUser();
+            Buttons sd1 = new Buttons();
+            sd1.StartPosition = FormStartPosition.Manual;
+            sd1.Left = 250;
+            sd1.Top = 130;
+
+            sd1.MdiParent = this.MdiParent;
+            sd1.Show();
+            this.Close();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void Buttons_Load(object sender, EventArgs e)
         {
 
         }

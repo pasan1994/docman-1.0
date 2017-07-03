@@ -49,6 +49,7 @@
             this.cats.Size = new System.Drawing.Size(249, 385);
             this.cats.TabIndex = 0;
             this.cats.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.cats_AfterSelect);
+            this.cats.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cats_MouseClick);
             // 
             // label1
             // 
@@ -104,8 +105,11 @@
             this.categoryGrid.Location = new System.Drawing.Point(333, 105);
             this.categoryGrid.Name = "categoryGrid";
             this.categoryGrid.ReadOnly = true;
+            this.categoryGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.categoryGrid.Size = new System.Drawing.Size(369, 385);
             this.categoryGrid.TabIndex = 4;
+            this.categoryGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.categoryGrid_CellContentClick);
+            this.categoryGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.categoryGrid_CellMouseClick);
             this.categoryGrid.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.categoryGrid_RowHeaderMouseClick);
             // 
             // newSub

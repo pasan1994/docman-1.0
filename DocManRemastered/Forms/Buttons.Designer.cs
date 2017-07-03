@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.titlecomboadd = new System.Windows.Forms.ComboBox();
+            this.lbltitle = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.levelcombo = new System.Windows.Forms.ComboBox();
@@ -37,7 +39,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.conpass = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.emailtxt1 = new System.Windows.Forms.TextBox();
             this.lNametxt = new System.Windows.Forms.TextBox();
@@ -61,9 +63,6 @@
             this.emailtxt = new System.Windows.Forms.TextBox();
             this.pass = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.lbltitle = new System.Windows.Forms.Label();
-            this.titlecomboadd = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.update.SuspendLayout();
@@ -93,7 +92,7 @@
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.conpass);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.emailtxt1);
             this.tabPage1.Controls.Add(this.lNametxt);
@@ -112,6 +111,29 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // titlecomboadd
+            // 
+            this.titlecomboadd.FormattingEnabled = true;
+            this.titlecomboadd.Items.AddRange(new object[] {
+            "Dr.",
+            "Mr.",
+            "Ms.",
+            "Mrs.",
+            "Professor"});
+            this.titlecomboadd.Location = new System.Drawing.Point(415, 24);
+            this.titlecomboadd.Name = "titlecomboadd";
+            this.titlecomboadd.Size = new System.Drawing.Size(121, 28);
+            this.titlecomboadd.TabIndex = 35;
+            // 
+            // lbltitle
+            // 
+            this.lbltitle.AutoSize = true;
+            this.lbltitle.Location = new System.Drawing.Point(348, 25);
+            this.lbltitle.Name = "lbltitle";
+            this.lbltitle.Size = new System.Drawing.Size(38, 20);
+            this.lbltitle.TabIndex = 34;
+            this.lbltitle.Text = "Title";
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,6 +144,7 @@
             this.button1.TabIndex = 32;
             this.button1.Text = "Clear";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -194,15 +217,15 @@
             this.label8.TabIndex = 27;
             this.label8.Text = "Password";
             // 
-            // textBox1
+            // conpass
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(145, 224);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 26);
-            this.textBox1.TabIndex = 25;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.conpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conpass.Location = new System.Drawing.Point(145, 224);
+            this.conpass.Margin = new System.Windows.Forms.Padding(2);
+            this.conpass.Name = "conpass";
+            this.conpass.Size = new System.Drawing.Size(166, 26);
+            this.conpass.TabIndex = 25;
+            this.conpass.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label9
             // 
@@ -346,6 +369,7 @@
             this.button4.TabIndex = 48;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -437,6 +461,7 @@
             this.confirmpass.Location = new System.Drawing.Point(199, 222);
             this.confirmpass.Margin = new System.Windows.Forms.Padding(2);
             this.confirmpass.Name = "confirmpass";
+            this.confirmpass.PasswordChar = '*';
             this.confirmpass.Size = new System.Drawing.Size(166, 26);
             this.confirmpass.TabIndex = 39;
             // 
@@ -453,6 +478,7 @@
             this.pass.Location = new System.Drawing.Point(199, 179);
             this.pass.Margin = new System.Windows.Forms.Padding(2);
             this.pass.Name = "pass";
+            this.pass.PasswordChar = '*';
             this.pass.Size = new System.Drawing.Size(166, 26);
             this.pass.TabIndex = 37;
             // 
@@ -467,33 +493,6 @@
             this.label14.TabIndex = 32;
             this.label14.Text = "Select User";
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // lbltitle
-            // 
-            this.lbltitle.AutoSize = true;
-            this.lbltitle.Location = new System.Drawing.Point(348, 25);
-            this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(38, 20);
-            this.lbltitle.TabIndex = 34;
-            this.lbltitle.Text = "Title";
-            // 
-            // titlecomboadd
-            // 
-            this.titlecomboadd.FormattingEnabled = true;
-            this.titlecomboadd.Items.AddRange(new object[] {
-            "Dr.",
-            "Mr.",
-            "Ms.",
-            "Mrs.",
-            "Professor"});
-            this.titlecomboadd.Location = new System.Drawing.Point(415, 24);
-            this.titlecomboadd.Name = "titlecomboadd";
-            this.titlecomboadd.Size = new System.Drawing.Size(121, 28);
-            this.titlecomboadd.TabIndex = 35;
-            // 
             // Buttons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,6 +504,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Buttons";
             this.Text = "Manage Users";
+            this.Load += new System.EventHandler(this.Buttons_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -525,7 +525,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox conpass;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox emailtxt1;
         private System.Windows.Forms.TextBox fnametxt;
@@ -547,7 +547,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox lNametxt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox titleCombo;
         private System.Windows.Forms.Label lbltitle;

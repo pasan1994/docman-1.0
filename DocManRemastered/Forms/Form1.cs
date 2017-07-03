@@ -57,22 +57,22 @@ namespace DocManRemastered
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String ID = null;
-            String usernametxt = username.Text;
-            String passwordtxt = Password.Text;
-            userLogin login = new userLogin();
-            ID=login.userLog(usernametxt,passwordtxt);
-            if (ID != null)
-            {
+           // String ID = null;
+          //  String usernametxt = username.Text;
+          //  String passwordtxt = Password.Text;
+           // userLogin login = new userLogin();
+          //  ID=login.userLog(usernametxt,passwordtxt);
+          //  if (ID != null)
+          //  {
                 main mdi = new main();
                 mdi.ShowDialog();
                 this.Close();
-            }
-            else
-            {
-                username.Clear();
-                Password.Clear();
-            }
+        //    }
+         //   else
+         //   {
+         //       username.Clear();
+         //       Password.Clear();
+         //   }
             
 
 

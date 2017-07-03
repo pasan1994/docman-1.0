@@ -23,14 +23,14 @@ namespace DocManRemastered
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CreateNewCategory cnc = new CreateNewCategory();
+            CreateNewCategory cnc = new CreateNewCategory(this);
             cnc.ShowDialog();
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UpdateDocSecondary uds = new UpdateDocSecondary(categoryGrid);
+            UpdateDocSecondary uds = new UpdateDocSecondary(categoryGrid,this);
             uds.ShowDialog();
 
         }
@@ -51,7 +51,7 @@ namespace DocManRemastered
 
         private void newSub_Click(object sender, EventArgs e)
         {
-            New_Sub_Category NSC = new New_Sub_Category(cts);
+            New_Sub_Category NSC = new New_Sub_Category(cts,this);
             NSC.ShowDialog();
             
         }
@@ -59,6 +59,33 @@ namespace DocManRemastered
         private void categoryGrid_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             updateDoc.Enabled = true;
+        }
+
+        public  void  formReload()
+        {
+            Categories sd1 = new Categories();
+            sd1.StartPosition = FormStartPosition.Manual;
+            sd1.Left = 250;
+            sd1.Top = 130;
+
+            sd1.MdiParent = this.MdiParent;
+            sd1.Show();
+            this.Close();
+        }
+
+        private void cats_MouseClick(object sender, MouseEventArgs e)
+        {
+            updateDoc.Enabled = false;
+        }
+
+        private void categoryGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            updateDoc.Enabled = true;
+        }
+
+        private void categoryGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

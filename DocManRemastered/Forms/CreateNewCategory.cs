@@ -15,15 +15,23 @@ namespace DocManRemastered
     {
         customNotification newMain = new customNotification();
         docman.Classes.Categories newcat = new docman.Classes.Categories();
+        Categories cat = new Categories();
         public CreateNewCategory()
         {
             InitializeComponent();
+        }
+
+        public CreateNewCategory(Categories cat)
+        {
+            InitializeComponent();
+            this.cat = cat;
         }
 
         private void CreateNewCategory_Load(object sender, EventArgs e)
         {
           
             newMain.customToCat(staff);
+            
 
 
         }
@@ -33,6 +41,8 @@ namespace DocManRemastered
             String namecat = name.Text;
             String staffcat = staff.SelectedValue.ToString();
             newcat.newMainCategory(namecat,staffcat);
+            cat.formReload();
+            this.Close();
         }
     }
 }

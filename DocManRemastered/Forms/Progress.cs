@@ -15,6 +15,7 @@ namespace DocManRemastered.Forms
     {
         String ID;
         searchUpdateDoc SD = new searchUpdateDoc();
+        customNotification cn = new customNotification();
         public Progress()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace DocManRemastered.Forms
         {
           
             SD.progressLoad(ID,progressView);
+            cn.custom(lecs);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,11 +43,16 @@ namespace DocManRemastered.Forms
             if (status.Checked)
                  statustxt = "Resolved";
             SD.insertProgress(ID,progresstxt.Text,deaddt,statustxt);
+
+            this.Hide();
+            Progress pr = new Progress(ID);
+            pr.ShowDialog();
+            this.Close();
         }
 
         private void progressView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            SD.loadUpdateProgress(progressView,progresstxt,deadline,status);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -57,6 +64,29 @@ namespace DocManRemastered.Forms
             if (status.Checked)
                 statustxt = "Resolved";
             SD.updateProgress(progressView,progresstxt,deaddt,statustxt);
+
+            this.Hide();
+            Progress pr = new Progress(ID);
+            pr.ShowDialog();
+            this.Close();
+        }
+
+        private void progressView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Progress pr = new Progress(ID);
+            pr.ShowDialog();
+            this.Close();
+        }
+
+        private void progressView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SD.loadUpdateProgress(progressView, progresstxt, deadline, status);
         }
     }
 }

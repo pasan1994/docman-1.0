@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.keywords = new System.Windows.Forms.RichTextBox();
+            this.sender1 = new System.Windows.Forms.TextBox();
             this.RecievedDatePicker = new System.Windows.Forms.DateTimePicker();
             this.LblDateRecieved = new System.Windows.Forms.Label();
             this.LblFrom = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.sender1 = new System.Windows.Forms.TextBox();
-            this.keywords = new System.Windows.Forms.RichTextBox();
             this.update = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -79,17 +79,36 @@
             this.panel3.Controls.Add(this.deadline);
             this.panel3.Controls.Add(this.LblDeadline);
             this.panel3.Location = new System.Drawing.Point(9, 36);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(375, 465);
             this.panel3.TabIndex = 121;
             // 
+            // keywords
+            // 
+            this.keywords.Location = new System.Drawing.Point(23, 290);
+            this.keywords.Name = "keywords";
+            this.keywords.Size = new System.Drawing.Size(328, 153);
+            this.keywords.TabIndex = 107;
+            this.keywords.Text = "";
+            // 
+            // sender1
+            // 
+            this.sender1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sender1.Location = new System.Drawing.Point(137, 56);
+            this.sender1.Margin = new System.Windows.Forms.Padding(2);
+            this.sender1.Name = "sender1";
+            this.sender1.Size = new System.Drawing.Size(214, 26);
+            this.sender1.TabIndex = 106;
+            // 
             // RecievedDatePicker
             // 
+            this.RecievedDatePicker.Checked = false;
             this.RecievedDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecievedDatePicker.Location = new System.Drawing.Point(137, 22);
-            this.RecievedDatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RecievedDatePicker.Margin = new System.Windows.Forms.Padding(2);
             this.RecievedDatePicker.Name = "RecievedDatePicker";
+            this.RecievedDatePicker.ShowCheckBox = true;
             this.RecievedDatePicker.Size = new System.Drawing.Size(214, 26);
             this.RecievedDatePicker.TabIndex = 93;
             // 
@@ -119,7 +138,7 @@
             // 
             this.topic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.topic.Location = new System.Drawing.Point(137, 95);
-            this.topic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.topic.Margin = new System.Windows.Forms.Padding(2);
             this.topic.Name = "topic";
             this.topic.Size = new System.Drawing.Size(214, 26);
             this.topic.TabIndex = 105;
@@ -151,7 +170,7 @@
             this.cate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cate.FormattingEnabled = true;
             this.cate.Location = new System.Drawing.Point(137, 129);
-            this.cate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cate.Margin = new System.Windows.Forms.Padding(2);
             this.cate.Name = "cate";
             this.cate.Size = new System.Drawing.Size(220, 28);
             this.cate.TabIndex = 98;
@@ -166,7 +185,7 @@
             "Moderate",
             "Not at all"});
             this.status.Location = new System.Drawing.Point(137, 162);
-            this.status.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.status.Margin = new System.Windows.Forms.Padding(2);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(91, 28);
             this.status.TabIndex = 97;
@@ -195,10 +214,12 @@
             // 
             // deadline
             // 
+            this.deadline.Checked = false;
             this.deadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deadline.Location = new System.Drawing.Point(137, 198);
-            this.deadline.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deadline.Margin = new System.Windows.Forms.Padding(2);
             this.deadline.Name = "deadline";
+            this.deadline.ShowCheckBox = true;
             this.deadline.Size = new System.Drawing.Size(214, 26);
             this.deadline.TabIndex = 101;
             // 
@@ -221,7 +242,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(400, 36);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(524, 206);
             this.panel1.TabIndex = 122;
@@ -240,7 +261,7 @@
             "All",
             "Custom"});
             this.notify.Location = new System.Drawing.Point(29, 29);
-            this.notify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.notify.Margin = new System.Windows.Forms.Padding(2);
             this.notify.Name = "notify";
             this.notify.Size = new System.Drawing.Size(215, 147);
             this.notify.TabIndex = 107;
@@ -250,7 +271,7 @@
             this.custom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custom.FormattingEnabled = true;
             this.custom.Location = new System.Drawing.Point(263, 29);
-            this.custom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.custom.Margin = new System.Windows.Forms.Padding(2);
             this.custom.Name = "custom";
             this.custom.Size = new System.Drawing.Size(213, 130);
             this.custom.TabIndex = 117;
@@ -287,7 +308,7 @@
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(400, 249);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(440, 252);
             this.panel2.TabIndex = 123;
@@ -296,7 +317,7 @@
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(31, 66);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(312, 26);
             this.textBox3.TabIndex = 112;
@@ -317,7 +338,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(17, 11);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(73, 24);
             this.checkBox1.TabIndex = 111;
@@ -328,7 +349,7 @@
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(355, 66);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(70, 27);
             this.button5.TabIndex = 116;
@@ -338,7 +359,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(31, 125);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(312, 105);
@@ -354,23 +375,6 @@
             this.label4.Size = new System.Drawing.Size(118, 20);
             this.label4.TabIndex = 115;
             this.label4.Text = "Search Results";
-            // 
-            // sender1
-            // 
-            this.sender1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sender1.Location = new System.Drawing.Point(137, 56);
-            this.sender1.Margin = new System.Windows.Forms.Padding(2);
-            this.sender1.Name = "sender1";
-            this.sender1.Size = new System.Drawing.Size(214, 26);
-            this.sender1.TabIndex = 106;
-            // 
-            // keywords
-            // 
-            this.keywords.Location = new System.Drawing.Point(23, 290);
-            this.keywords.Name = "keywords";
-            this.keywords.Size = new System.Drawing.Size(328, 153);
-            this.keywords.TabIndex = 107;
-            this.keywords.Text = "";
             // 
             // update
             // 
@@ -391,7 +395,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UpdateDocSecondary";
             this.Text = "UpdateDocSecondary";
             this.Load += new System.EventHandler(this.UpdateDocSecondary_Load);

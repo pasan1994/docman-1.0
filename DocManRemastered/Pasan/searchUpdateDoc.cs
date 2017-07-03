@@ -64,15 +64,62 @@ namespace docman.Classes
 
         }
 
+        public void searchDocument(String keyword, ref DataGridView dv,String ID)
+        {
+
+            if (conn.connection().State == System.Data.ConnectionState.Closed)
+                conn.connection().Open();
+
+
+            DataTable dtRecord = new DataTable();
+
+
+            SqlCommand readcommand2 = new SqlCommand("SELECT c.category_name ,f.* FROM files f,categories c where keywords LIKE '%'+@key+'%' and f.catID=category_ID Except select c.category_name ,f.* FROM files f,categories c,taggingDocs t where docID=@doc and t.tagdocID=f.doc_ID and f.catID=category_ID", conn.connection());
+
+            readcommand2.Parameters.AddWithValue("@key", keyword);
+            readcommand2.Parameters.AddWithValue("@doc", ID);
+            SqlDataAdapter adapter = new SqlDataAdapter(readcommand2);
+            try
+            {
+                adapter.Fill(dtRecord);
+
+
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+            readcommand2.Dispose();
+            adapter.Dispose();
+
+            dv.DataSource = dtRecord;
+            dv.Columns[1].Visible = false;
+            dv.Columns[2].Visible = false;
+            dv.Columns[3].Visible = false;
+            dv.Columns[4].Visible = false;
+            dv.Columns[5].Visible = false;
+            dv.Columns[7].Visible = false;
+            dv.Columns[8].Visible = false;
+            dv.Columns[9].Visible = false;
+
+
+
+            dtRecord.Dispose();
+
+
+
+
+            conn.closeConnection();
+
+        }
+
         public String  docINFO(ref DataGridView dv, ref Label lbldate, ref Label lblsender, ref Label lbltopic, ref Label lblstatus, ref Label lbldeadline, ref RichTextBox lblnotifications)
         {
             if (conn.connection().State == System.Data.ConnectionState.Closed)
                 conn.connection().Open();
             bool custom = false;
 
-            if (conn.connection().State == System.Data.ConnectionState.Closed)
-                conn.connection().Open();
-
+            lblnotifications.Clear();
             String ID= dv.SelectedRows[0].Cells[2].Value.ToString();
             lbldate.Text = dv.SelectedRows[0].Cells[3].Value.ToString();
               lblsender.Text = dv.SelectedRows[0].Cells[4].Value.ToString();
@@ -120,15 +167,25 @@ namespace docman.Classes
                 conn.connection().Open();
             try
             {
+                
                 category.Text = dv.SelectedRows[0].Cells[0].Value.ToString();
-                date.Value = (DateTime)(dv.SelectedRows[0].Cells[3].Value);
+                if (dv.SelectedRows[0].Cells[3].Value != DBNull.Value)
+                {
+                    date.Value = (DateTime)(dv.SelectedRows[0].Cells[3].Value);
+                    date.Checked = true;
+                }
+                else
+                    date.Checked = false;
                 sender.Text = dv.SelectedRows[0].Cells[4].Value.ToString();
                 topic.Text = dv.SelectedRows[0].Cells[5].Value.ToString();
                 status.Text = dv.SelectedRows[0].Cells[7].Value.ToString();
                 if (dv.SelectedRows[0].Cells[8].Value != DBNull.Value)
                 {
                     deadline.Value = (DateTime)dv.SelectedRows[0].Cells[8].Value;
+                    deadline.Checked = true;
                 }
+                else
+                    deadline.Checked = false;
                 
                 keywords.Text = dv.SelectedRows[0].Cells[9].Value.ToString();
 
@@ -233,9 +290,18 @@ namespace docman.Classes
             readcommand3 = new SqlCommand("Update files SET catID=@category where doc_ID=" + ID + " ", conn.connection());
             readcommand3.Parameters.AddWithValue("@category",category.SelectedValue);
             readcommand3.ExecuteNonQuery();
-            readcommand3 = new SqlCommand("Update files SET date_Recieved=@date where doc_ID=" + ID + " ", conn.connection());
-            readcommand3.Parameters.AddWithValue("@date", date.Value);
-            readcommand3.ExecuteNonQuery();
+            if (date.Checked == true)
+            {
+                readcommand3 = new SqlCommand("Update files SET date_Recieved=@date where doc_ID=" + ID + " ", conn.connection());
+                readcommand3.Parameters.AddWithValue("@date", date.Value);
+                readcommand3.ExecuteNonQuery();
+            }
+            else {
+                readcommand3 = new SqlCommand("Update files SET date_Recieved=@date where doc_ID=" + ID + " ", conn.connection());
+                readcommand3.Parameters.AddWithValue("@date", DBNull.Value);
+                readcommand3.ExecuteNonQuery();
+
+            }
             readcommand3 = new SqlCommand("Update files SET  sender=@sender where doc_ID=" + ID + " ", conn.connection());
             readcommand3.Parameters.AddWithValue("@sender", sender.Text);
             readcommand3.ExecuteNonQuery();
@@ -245,9 +311,18 @@ namespace docman.Classes
             readcommand3 = new SqlCommand("Update files SET  status=@status where doc_ID=" + ID + " ", conn.connection());
             readcommand3.Parameters.AddWithValue("@status",status.SelectedItem.ToString());
             readcommand3.ExecuteNonQuery();
-            readcommand3 = new SqlCommand("Update files SET  deadline=@deadline where doc_ID=" + ID + " ", conn.connection());
-            readcommand3.Parameters.AddWithValue("@deadline", deadline.Value);
-            readcommand3.ExecuteNonQuery();
+            if (deadline.Checked == true)
+            {
+                readcommand3 = new SqlCommand("Update files SET  deadline=@deadline where doc_ID=" + ID + " ", conn.connection());
+                readcommand3.Parameters.AddWithValue("@deadline", deadline.Value);
+                readcommand3.ExecuteNonQuery();
+            } else
+            {
+                readcommand3 = new SqlCommand("Update files SET  deadline=@deadline where doc_ID=" + ID + " ", conn.connection());
+                readcommand3.Parameters.AddWithValue("@deadline", DBNull.Value);
+                readcommand3.ExecuteNonQuery();
+            }
+          
             readcommand3 = new SqlCommand("Update files SET  keywords=@keywords where doc_ID=" + ID + " ", conn.connection());
             readcommand3.Parameters.AddWithValue("@keywords", keywords.Text);
             readcommand3.ExecuteNonQuery();
@@ -260,6 +335,7 @@ namespace docman.Classes
 
         private void getItems(CheckedListBox ch2, bool value, String ID)
         {
+           
             SqlCommand insert = null;
             bool check = true;
             try
@@ -268,21 +344,26 @@ namespace docman.Classes
                 if (value == true)
                     foreach (object itemChecked in ch2.CheckedItems)
                     {
+                        check = true;
                         DataRowView castedItem = itemChecked as DataRowView;
                         string id = castedItem["staffID"].ToString();
                        
-                            foreach (String s in customNotifications)
-                                if (id== s)
-                                    check = false;
+                        
+                        foreach (String s in customNotifications)
+                        
+                          if (s==id)
+                            
+                                check = false;
+                                                                                                                                         
+                            if (check == true)
+                            {
+                           
+                                insert = new SqlCommand("INSERT INTO customNotifications (docID,staffID) VALUES (@ID,@staffID)", conn.connection());
+                                insert.Parameters.AddWithValue("@ID", ID);
+                                insert.Parameters.AddWithValue("@staffID", id);
+                                insert.ExecuteNonQuery();
+                            }
 
-                           if(check==true)
-                              {
-                                    insert = new SqlCommand("INSERT INTO customNotifications (docID,staffID) VALUES (@ID,@staffID)", conn.connection());
-                                    insert.Parameters.AddWithValue("@ID", ID);
-                                    insert.Parameters.AddWithValue("@staffID",id);
-                                    insert.ExecuteNonQuery();
-                                }
-                                
                         
 
 
@@ -291,6 +372,7 @@ namespace docman.Classes
                 if (value == false)
                     for (int x = 0; x < ch2.Items.Count; x++)
                     {
+                        check = true;
                         if (ch2.GetItemChecked(x))
                         {
                           
@@ -446,6 +528,7 @@ namespace docman.Classes
             }
         }
 
+       
     }
         
     

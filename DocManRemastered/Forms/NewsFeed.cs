@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocManRemastered.Pasan;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace DocManRemastered
 {
     public partial class NewsFeed : Form
     {
+        Reminder r = new Reminder();
         public NewsFeed()
         {
             InitializeComponent();
@@ -20,6 +22,13 @@ namespace DocManRemastered
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void NewsFeed_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show(DateTime.Now.Date.ToString());
+            r.upcomingDeadlines(updead);
+            r.recentFiles(recent);
         }
     }
 }

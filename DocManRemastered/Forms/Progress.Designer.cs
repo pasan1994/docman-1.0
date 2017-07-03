@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.status = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.lecs = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.progressView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,13 +50,16 @@
             this.progressView.Location = new System.Drawing.Point(21, 26);
             this.progressView.Name = "progressView";
             this.progressView.ReadOnly = true;
-            this.progressView.Size = new System.Drawing.Size(511, 214);
+            this.progressView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.progressView.Size = new System.Drawing.Size(614, 214);
             this.progressView.TabIndex = 0;
+            this.progressView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.progressView_CellClick);
+            this.progressView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.progressView_CellContentClick);
             this.progressView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.progressView_RowHeaderMouseClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(558, 26);
+            this.button1.Location = new System.Drawing.Point(671, 26);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 44);
             this.button1.TabIndex = 1;
@@ -65,7 +69,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(558, 99);
+            this.button2.Location = new System.Drawing.Point(671, 99);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(165, 44);
             this.button2.TabIndex = 2;
@@ -75,12 +79,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(558, 174);
+            this.button3.Location = new System.Drawing.Point(671, 174);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(165, 44);
             this.button3.TabIndex = 3;
             this.button3.Text = "Delete Progress";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // progresstxt
             // 
@@ -137,11 +142,20 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Status";
             // 
+            // lecs
+            // 
+            this.lecs.FormattingEnabled = true;
+            this.lecs.Location = new System.Drawing.Point(567, 287);
+            this.lecs.Name = "lecs";
+            this.lecs.Size = new System.Drawing.Size(269, 154);
+            this.lecs.TabIndex = 10;
+            // 
             // Progress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 476);
+            this.ClientSize = new System.Drawing.Size(859, 476);
+            this.Controls.Add(this.lecs);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.status);
             this.Controls.Add(this.label2);
@@ -173,5 +187,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox status;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckedListBox lecs;
     }
 }

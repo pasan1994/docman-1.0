@@ -16,16 +16,18 @@ namespace DocManRemastered
         private DataGridView dv;
         searchUpdateDoc sd2 = new searchUpdateDoc();
         customNotification cn2 = new customNotification();
+        Categories cat = new Categories();
         
         public UpdateDocSecondary()
         {
             InitializeComponent();
         }
 
-        public UpdateDocSecondary(DataGridView dv)
+        public UpdateDocSecondary(DataGridView dv,Categories cat)
         {
             InitializeComponent();
             this.dv = dv;
+            this.cat = cat;
         }
 
         private void UpdateDocSecondary_Load(object sender, EventArgs e)
@@ -38,6 +40,10 @@ namespace DocManRemastered
         private void update_Click(object sender, EventArgs e)
         {
             sd2.updateDetails(ref dv, RecievedDatePicker, sender1, topic, status, deadline, notify, custom, keywords,cate);
+            cat.formReload();
+            
+            this.Close();
+           
         }
     }
 }

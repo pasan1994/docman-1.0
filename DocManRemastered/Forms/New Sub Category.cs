@@ -15,21 +15,25 @@ namespace DocManRemastered
 
         private String Node;
         docman.Classes.Categories ctsSub;
+        Categories cat;
         public New_Sub_Category()
         {
             InitializeComponent();
         }
 
-        public New_Sub_Category(docman.Classes.Categories ctsSub)
+        public New_Sub_Category(docman.Classes.Categories ctsSub,Categories cat)
         {
             InitializeComponent();
             this.ctsSub = ctsSub;
+            this.cat = cat;
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
             ctsSub.newSubCategory(ctsSub.getNodeText(),newSub.Text);
+            cat.formReload();
+            
         }
 
         

@@ -33,6 +33,7 @@ namespace docman.Classes
                 insertCommand.ExecuteNonQuery();
                 insertCommand.Dispose();
                 conn.closeConnection();
+                MessageBox.Show("New User Added Successfully");
             }
             catch (Exception ex)
             {
@@ -84,7 +85,8 @@ namespace docman.Classes
                
                 updateCommand.ExecuteNonQuery();
                 updateCommand.Dispose();
-                conn.closeConnection();
+                conn.closeConnection(); 
+                MessageBox.Show("User Updated Successfully");
             }
             catch (Exception f)
             {
@@ -120,6 +122,26 @@ namespace docman.Classes
 
             }
 
+        }
+        public void deleteUser()
+        {
+            if (conn.connection().State == System.Data.ConnectionState.Closed)
+                conn.connection().Open();
+            SqlCommand delete=null;
+            try
+            {
+
+                delete = new SqlCommand("DELETE from Users where staffID=@staffID ", conn.connection());
+                delete.Parameters.AddWithValue("@staffID", staffID);
+                delete.ExecuteNonQuery();
+                MessageBox.Show("User deleted successfully");
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+            delete.Dispose();
+            conn.closeConnection();
         }
 
     }
